@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnithV - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-color);
+        }
+        
+        /* Secciones */
+        section {
+            padding: 3rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        /* About Me */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skill-category {
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+            margin-left: 1.5rem;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-list li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .skill {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.3s;
+        }
+        
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info ul {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .hashtags {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .hashtag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with main information -->
+    <header>
+        <div class="container header-content">
+            <img src="fotogt.jpg" alt="EnithV" class="profile-img">
+            <h1>Gicela Vargas</h1>
+            <p class="tagline">Civil Engineer | Data Analyst (Power BI/Looker Studio) | AI Content Writer for LLMs (LATAM)</p>
+            <p>"Try Just One More Time"</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- About Me -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm Gicela — a Civil Engineer and Environmental Specialist with a strong background in infrastructure projects, specifically in auditing the technical, administrative, and financial compliance in construction.</p>
+                    
+                    <p>I've managed the planning, supervision, and auditing of various projects, including water treatment plants and rural aqueducts. Additionally, I've coordinated multidisciplinary teams and possess skills in data analysis and ethical AI content development with a focus on reducing biases in training data.</p>
+                    
+                    <p>My hybrid profile combines engineering expertise with cutting-edge technical skills, allowing me to bridge the gap between traditional infrastructure development and modern data-driven approaches.<br></p>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Data & AI</h3>
+                        <ul class="skill-list">
+                            <li>Optimizing Spanish-language AI responses through ethical prompt design and dataset curation</li>
+                            <li>Transforming raw data into insights with Power BI and Looker Studio</li>
+                            <li>Reducing biases in AI training data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-hard-hat"></i> Engineering & Compliance</h3>
+                        <ul class="skill-list">
+                            <li>Technical, administrative, and financial compliance auditing in construction</li>
+                            <li>Management of water treatment plants and rural aqueduct projects</li>
+                            <li>Environmental Impact Assessment (EIA) for Construction Projects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-users"></i> Leadership & Coordination</h3>
+                        <ul class="skill-list">
+                            <li>Coordination of multidisciplinary teams</li>
+                            <li>Project planning, supervision, and auditing</li>
+                            <li>Seamless collaboration across LATAM and global teams (fluent English/Spanish)</li>
+                        </ul>
+                    </div>
+                    
+                    <p>I'm pursuing roles that leverage my unique combination of engineering expertise and data analysis skills, where I can apply my problem-solving mindset and project coordination experience to drive innovation in technology-enhanced infrastructure development.</p>
+                    
+                    <p>Let's build the future together!</p>
+                    
+                    <div class="hashtags">
+                        <span class="hashtag">#DataAnalyst</span>
+                        <span class="hashtag">#LatinAmericaTech</span>
+                        <span class="hashtag">#ResponsibleAI</span>
+                        <span class="hashtag">#CivilEngineer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Data visualization, statistical analysis, exploratory data analysis</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Prompt Engineering</h3>
+                    <p>Ethical AI design, dataset curation, Spanish-language optimization</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-tools"></i>
+                    <h3>Engineering</h3>
+                    <p>Technical audits, infrastructure projects, environmental impact assessment</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-language"></i>
+                    <h3>Bilingual</h3>
+                    <p>Fluent in English and Spanish, cross-cultural collaboration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Analysis Project" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Data Analytics Certification Project</h3>
+                        <p>Comprehensive data analysis project for Guayerd/IBM certification.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Optimization Project" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Spanish-language AI Optimization</h3>
+                        <p>Ethical prompt design and dataset curation for improved AI responses in Spanish.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Engineering Project" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Infrastructure Audit</h3>
+                        <p>Technical and financial audit for urban infrastructure projects.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Interested in collaborating or have questions? Feel free to contact me!</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>enith.vargas@example.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bogotá, Colombia</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/EnithV" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Gicela Vargas. All rights reserved.</p>
+            <p>Try Just One More Time</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling effect for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
