@@ -267,26 +267,29 @@
             color: var(--secondary-color);
         }
         
-        .social-links {
+       .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: var(--secondary-color);
             color: white;
             border-radius: 50%;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         
         .social-links a:hover {
             background-color: var(--accent-color);
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
         
         .hashtags {
@@ -512,6 +515,7 @@
     </script>
 </body>
 </html>
+
 
 
 
