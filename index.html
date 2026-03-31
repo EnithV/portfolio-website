@@ -268,26 +268,23 @@
             width: 30px;
         }
         
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: var(--secondary-color);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-links a i {
-            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.6)); /* Brillo blanco suave */
-        }
-        
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        transition: all 0.3s;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Mejora visibilidad del ícono */
+    }
+    
+    .social-links a:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+    }
         
         .hashtags {
             margin-top: 2rem;
