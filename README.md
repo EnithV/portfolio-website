@@ -2,15 +2,15 @@
 
 **Live Site**: https://enithv.github.io/portfolio-website/
 
-Professional portfolio website showcasing engineering and data science projects. Built with modern web technologies and responsive design.
+Professional portfolio website showcasing engineering, data, and system-oriented projects. Built with modern web technologies and responsive design.
 
 ---
 
 ## About
 
-This is the personal portfolio website of **Gicela Vargas**, Civil Engineer and Data & AI Specialist, featuring a collection of technical projects that demonstrate expertise in infrastructure engineering, data analytics, and ethical AI development.
+This is the personal portfolio website of **Gicela Vargas**, Civil Engineer and Data & AI Specialist, focused on building **data-driven systems, automation, and real-world engineering solutions**.
 
-The portfolio is designed to clearly communicate **end-to-end project experience**, combining real-world engineering knowledge with modern data science and machine learning solutions.
+The portfolio is designed to clearly communicate **end-to-end project experience**, combining real-world engineering knowledge with modern data science, machine learning, and structured system design.
 
 ---
 
@@ -21,7 +21,7 @@ The portfolio showcases four main technical projects:
 ---
 
 ### 1. Aurelion Project – End-to-End Data & AI System
-**Comprehensive data analysis and machine learning system for retail decision-making**
+**Comprehensive data analysis and machine learning system for structured decision-making**
 
 - **Repository**: https://github.com/EnithV/PROYECTO-AURELION  
 - **Technologies**: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Statistical Analysis  
@@ -41,7 +41,7 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 ---
 
 ### 2. Construction Compliance Analyzer
-**Machine learning system for automated construction project compliance analysis**
+**Machine learning system for automated construction project compliance analysis and risk prediction**
 
 - **Repository**: https://github.com/EnithV/construction-compliance-analyzer  
 - **Live Demo**: https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/  
@@ -50,11 +50,12 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
   - ML-based compliance risk prediction
   - Interactive dashboards
   - Compliance scoring aligned with Colombian regulations
+  - Decision support based on real-world engineering logic
 
 ---
 
 ### 3. LLM LATAM Content Pipeline
-**Automated content generation pipeline for ethical LLM training**
+**Structured pipeline for content generation and validation in ethical LLM training**
 
 - **Repository**: https://github.com/EnithV/llm-latam-content-pipeline  
 - **Sample Output**: https://github.com/EnithV/llm-latam-content-pipeline/blob/main/sample_output.json  
@@ -63,11 +64,12 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
   - Ethical AI training content
   - Bilingual (Spanish / English) datasets
   - Quality assurance and bias mitigation focus
+  - Structured dataset generation and validation workflows
 
 ---
 
 ### 4. Water Quality Monitoring Dashboard
-**Real-time monitoring system for water treatment plants**
+**Real-time monitoring system for water treatment processes**
 
 - **Repository**: https://github.com/EnithV/water-quality-monitor  
 - **Live Demo**: https://enithv-water-quality-monitor-app-mqmqsd.streamlit.app/  
@@ -76,6 +78,7 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
   - Real-time water quality metrics
   - Automated alert system
   - Compliance tracking dashboards
+  - Visualization based on engineering workflows
 
 ---
 
@@ -117,4 +120,3 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 ---
 
 ## File Structure
-
