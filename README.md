@@ -16,11 +16,40 @@ The portfolio is designed to clearly communicate **end-to-end project experience
 
 ## Featured Projects
 
-The portfolio showcases five main technical projects:
+The portfolio showcases **six** main technical projects:
 
 ---
 
-### 1. Aurelion Project – End-to-End Data & AI System
+### 1. AI Systems & Automation (Private Collaboration)
+
+**Structured automation systems for real-world workflows**
+
+- 🧠 Modular architecture  
+- ⚙️ Workflow logic  
+- 🔄 Task pipelines  
+- 🤖 AI workflows  
+
+> 🔒 Private collaboration — cannot be publicly shared
+
+---
+
+### 2. Construction Compliance Analyzer
+
+**Machine learning system for automated construction project compliance analysis and risk prediction**
+
+- **Repository**: https://github.com/EnithV/construction-compliance-analyzer  
+- **Live Demo**: https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/  
+- **Technologies**: Python, Streamlit, Scikit-learn, Plotly  
+- **Features**:
+  - ML-based compliance risk prediction
+  - Interactive dashboards
+  - Compliance scoring aligned with Colombian regulations
+  - Decision support based on real-world engineering logic
+
+---
+
+### 3. Aurelion Project – End-to-End Data & AI System
+
 **Comprehensive data analysis and machine learning system for structured decision-making**
 
 - **Repository**: https://github.com/EnithV/PROYECTO-AURELION  
@@ -40,21 +69,8 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 
 ---
 
-### 2. Construction Compliance Analyzer
-**Machine learning system for automated construction project compliance analysis and risk prediction**
+### 4. LLM LATAM Content Pipeline
 
-- **Repository**: https://github.com/EnithV/construction-compliance-analyzer  
-- **Live Demo**: https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/  
-- **Technologies**: Python, Streamlit, Scikit-learn, Plotly  
-- **Features**:
-  - ML-based compliance risk prediction
-  - Interactive dashboards
-  - Compliance scoring aligned with Colombian regulations
-  - Decision support based on real-world engineering logic
-
----
-
-### 3. LLM LATAM Content Pipeline
 **Structured pipeline for content generation and validation in ethical LLM training**
 
 - **Repository**: https://github.com/EnithV/llm-latam-content-pipeline  
@@ -68,7 +84,8 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 
 ---
 
-### 4. Water Quality Monitoring Dashboard
+### 5. Water Quality Monitoring Dashboard
+
 **Real-time monitoring system for water treatment processes**
 
 - **Repository**: https://github.com/EnithV/water-quality-monitor  
@@ -82,7 +99,8 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 
 ---
 
-### 5. Potenciar Solidario – NGO Financial Dashboard
+### 6. Potenciar Solidario – NGO Financial Dashboard
+
 **Interactive dashboard for financial transparency and decision-making**
 
 - **Repository**: https://github.com/EnithV/potenciar-solidario-financial-analysis  
