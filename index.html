@@ -4,216 +4,555 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gicela Vargas - Portfolio</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        body {
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+        }
+        
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
         header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
+            padding: 3rem 0;
             text-align: center;
-            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
         }
-
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
         .profile-img {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1rem;
+            background-color: #fff;
         }
-
+        
         h1 {
-            margin: 0.5rem 0;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
-
+        
         .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+        
+        .quote {
+            font-style: italic;
             font-size: 1rem;
             opacity: 0.9;
         }
-
-        .quote {
-            font-style: italic;
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .skill {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.3s;
+        }
+        
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .skill h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .project-description {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            flex: 1;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--dark-color);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
             margin-top: 0.5rem;
         }
-
-        nav {
-            background: #fff;
+        
+        .project-links a {
+            font-size: 0.9rem;
+        }
+        
+        .contact-container {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 2rem;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .project {
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        iframe {
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-
-        footer {
+            justify-content: center;
             text-align: center;
-            padding: 1rem;
-            background: #1e3c72;
-            color: white;
         }
-
-        .btn {
-            display: inline-block;
+        
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .contact-info ul {
+            list-style: none;
             margin-top: 1rem;
-            padding: 10px 15px;
-            background: #2a5298;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .contact-info i {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            width: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--secondary-color);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .hashtags {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .hashtag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <img src="fotogt.JPG" alt="Gicela Vargas" class="profile-img"
-        onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80'">
-
-    <h1>Gicela Vargas</h1>
-    <p class="tagline">Civil Engineer | Data & AI Specialist | Systems & Automation</p>
-    <p class="quote">"Try Just One More Time"</p>
-    <p style="margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">
-        Engineering mindset applied to modern technology
-    </p>
+    <div class="container header-content">
+        <img src="fotogt.JPG" alt="Gicela Vargas" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+        <h1>Gicela Vargas</h1>
+        <p class="tagline">Civil Engineer | Data & AI Specialist | Systems & Automation</p>
+        <p class="quote">"Try Just One More Time"</p>
+    </div>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+<main>
+    <div class="container">
+        <!-- About Me -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>Hi, I'm Gicela — a Civil Engineer and Environmental Specialist with a strong background in infrastructure projects, focused on auditing technical, administrative, and financial compliance in construction.</p>
+                
+                <p>I've worked on real-world systems such as water treatment plants and infrastructure projects, developing a strong foundation in structured problem-solving, decision-making, and process optimization.</p>
+                
+                <p>Today, I combine that experience with skills in <strong>data analysis, AI systems, and automation</strong>, allowing me to design solutions that connect real-world engineering challenges with modern technology.</p>
+                
+                <p>My work focuses on building <strong>structured, data-driven systems</strong> that improve decision-making and automate complex processes.</p>
+            </div>
+        </section>
 
-<section id="about">
-    <h2>About Me</h2>
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data & Analytics</h3>
+                    <p>Python, Pandas, Power BI, Looker Studio, Statistical Analysis</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Scikit-learn, NLP, LLM Pipelines, Bias Detection, AI Evaluation</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Systems & Automation</h3>
+                    <p>Modular Architecture, Workflow Design, Data Pipelines, Automation Systems</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Engineering</h3>
+                    <p>Infrastructure Auditing, Compliance, Environmental Impact Assessment</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-language"></i>
+                    <h3>Languages</h3>
+                    <p>Spanish (Native), English (Fluent)</p>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        Hi, I'm Gicela — a Civil Engineer with a strong background in infrastructure projects,
-        now focused on data, AI, and system design.
-    </p>
+        <!-- Featured Projects -->
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Private Collaboration -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Systems Automation" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">AI Systems & Automation</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Modular Architecture</span>
+                            <span class="tech-tag">Workflow Design</span>
+                        </div>
+                        <p class="project-description">Structured automation systems for real-world workflows. Modular architecture, task pipelines, and AI workflow integration.</p>
+                        <div class="project-links">
+                            <span style="color: #777; font-size: 0.8rem;">🔒 Private collaboration</span>
+                        </div>
+                    </div>
+                </div>
 
-    <p>
-        I specialize in transforming real-world problems into structured, data-driven solutions,
-        combining engineering logic with modern technology.
-    </p>
+                <!-- Construction Compliance Analyzer -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction Compliance" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Construction Compliance Analyzer</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                        <p class="project-description">ML-based compliance risk prediction with interactive dashboards. Aligned with Colombian regulations (NSR-10, Resolution 2115).</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/construction-compliance-analyzer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
 
-    <p>
-        My work focuses on automation, analytics, and building systems that improve decision-making.
-    </p>
-</section>
+                <!-- Aurelion Data System -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Aurelion Project" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Aurelion – End-to-End Data System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                        </div>
+                        <p class="project-description">End-to-end data pipeline (EDA → modeling → insights). Regression, classification, clustering, and automated documentation.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/PROYECTO-AURELION" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
 
-<section id="projects">
-    <h2>Projects</h2>
+                <!-- LLM LATAM Pipeline -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="LLM Pipeline" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">LLM LATAM Content Pipeline</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Bias Detection</span>
+                        </div>
+                        <p class="project-description">Structured content generation and validation for ethical LLM training. Bilingual datasets (EN/ES) with quality assurance workflows.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/llm-latam-content-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/EnithV/llm-latam-content-pipeline/blob/main/sample_output.json" target="_blank"><i class="fas fa-external-link-alt"></i> Sample Output</a>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="project">
-        <h3>Potenciar Solidario</h3>
+                <!-- Water Quality Monitor -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Water Quality" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Water Quality Monitoring Dashboard</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                        <p class="project-description">Real-time monitoring system for water treatment processes. Automated alerts, compliance tracking, and engineering-based visualizations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/water-quality-monitor" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://enithv-water-quality-monitor-app-mqmqsd.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
 
-        <p>
-            Financial analysis dashboard for NGOs, designed to improve transparency and decision-making
-            through interactive data visualization.
-        </p>
+                <!-- Financial Dashboard -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Financial Dashboard" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Potenciar Solidario Financial Dashboard</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">Looker Studio</span>
+                        </div>
+                        <p class="project-description">BI solution for NGO financial transparency. Revenue/expense tracking, donor analytics, and operational metrics.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/potenciar-solidario-financial-analysis" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
 
-        <p><strong>Technologies:</strong> Python, Pandas, Looker Studio</p>
+                <!-- Portfolio Website -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portfolio Website" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p class="project-description">Responsive portfolio showcasing engineering and data science projects. Modern design with CSS Grid, Flexbox, and interactive elements.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/EnithV/portfolio-website" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://enithv.github.io/portfolio-website/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
 
-        <iframe 
-            width="100%" 
-            height="500" 
-            src="https://lookerstudio.google.com/embed/reporting/iESBg8dQb4w/page/p_1"
-            frameborder="0" 
-            allowfullscreen>
-        </iframe>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Interested in collaborating or have questions? Feel free to reach out!</p>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:egicelav@gmail.com">egicelav@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Remote, Global</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/EnithV" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/gicelavargas/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="hashtags">
+                        <span class="hashtag">#DataAnalyst</span>
+                        <span class="hashtag">#AIEthics</span>
+                        <span class="hashtag">#Automation</span>
+                        <span class="hashtag">#SystemsDesign</span>
+                        <span class="hashtag">#CivilEngineer</span>
+                        <span class="hashtag">#LatinAmericaTech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <div class="project">
-        <h3>Construction Compliance Analyzer</h3>
-
-        <p>
-            Machine learning system for predicting compliance risks in construction projects.
-        </p>
-
-        <p><strong>Technologies:</strong> Python, Scikit-learn, Streamlit</p>
-
-        <a href="https://github.com/EnithV/construction-compliance-analyzer" target="_blank" class="btn">
-            View Project
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>LLM LATAM Content Pipeline</h3>
-
-        <p>
-            Pipeline for generating and validating datasets for LLM training with a focus on bias detection.
-        </p>
-
-        <p><strong>Technologies:</strong> Python, NLP, Pandas</p>
-
-        <a href="https://github.com/EnithV/llm-latam-content-pipeline" target="_blank" class="btn">
-            View Project
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>Aurelion – Data & AI System</h3>
-
-        <p>
-            End-to-end system including data preprocessing, statistical analysis, and predictive modeling.
-        </p>
-
-        <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas</p>
-
-        <a href="https://github.com/EnithV/PROYECTO-AURELION" target="_blank" class="btn">
-            View Project
-        </a>
-    </div>
-
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p>Email: egicelav@gmail.com</p>
-
-    <a href="https://github.com/EnithV" class="btn" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/gicelavargas/" class="btn" target="_blank">LinkedIn</a>
-
-    <p style="margin-top:1rem; font-weight:bold;">
-        Open to remote opportunities and collaborations
-    </p>
-</section>
+</main>
 
 <footer>
-    <p>© 2026 Gicela Vargas</p>
+    <div class="container">
+        <p>&copy; 2026 Gicela Vargas. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">"Try Just One More Time"</p>
+    </div>
 </footer>
 
 </body>
