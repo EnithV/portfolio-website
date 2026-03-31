@@ -16,7 +16,7 @@ The portfolio is designed to clearly communicate **end-to-end project experience
 
 ## Featured Projects
 
-The portfolio showcases five main technical projects:
+The portfolio showcases six main technical projects:
 
 ---
 
@@ -82,17 +82,31 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
 
 ---
 
-### 5. Potenciar Solidario – Financial Analysis Dashboard
-**Business intelligence solution for NGO financial transparency and decision-making**
+### 5. Potenciar Solidario – NGO Financial Dashboard
+**Interactive dashboard for financial transparency and decision-making**
 
 - **Repository**: https://github.com/EnithV/potenciar-solidario-financial-analysis  
 - **Live Demo**: https://lookerstudio.google.com/s/iESBg8dQb4w  
-- **Technologies**: Python, Pandas, Looker Studio, Data Visualization  
+- **Technologies**: Looker Studio, Data Visualization, Financial Analytics  
 - **Features**:
-  - Financial data analysis and KPI tracking
-  - Interactive dashboards for decision-making
-  - Revenue and expense monitoring
-  - Data-driven insights for social impact organizations
+  - Complete financial analysis for a Latin American NGO
+  - Revenue/expense tracking across 1,138+ transactions
+  - Donor and vendor intelligence
+  - Operational transparency metrics
+
+---
+
+### 6. Portfolio Website
+**Responsive personal portfolio built with HTML, CSS, and JavaScript**
+
+- **Repository**: https://github.com/EnithV/portfolio-website  
+- **Live Site**: https://enithv.github.io/portfolio-website/  
+- **Technologies**: HTML5, CSS3, JavaScript, CSS Grid, Flexbox  
+- **Features**:
+  - Modern responsive design
+  - Interactive elements and smooth scrolling
+  - Project showcase with live demos
+  - Mobile-first approach
 
 ---
 
