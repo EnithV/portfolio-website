@@ -71,6 +71,30 @@
             z-index: 1;
         }
         
+        /* Selector de idioma */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .language-selector a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: background-color 0.3s;
+        }
+        
+        .language-selector a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: white;
+        }
+        
         .profile-img {
             width: 150px;
             height: 150px;
@@ -327,12 +351,24 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            .language-selector {
+                top: 10px;
+                right: 10px;
+            }
+            .language-selector a {
+                padding: 3px 8px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="language-selector">
+        <a href="index.html" style="background-color: rgba(255,255,255,0.4);">🇺🇸 EN</a>
+        <a href="index-es.html">🇪🇸 ES</a>
+    </div>
     <div class="container header-content">
         <img src="fotogt.JPG" alt="Gicela Vargas" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
         <h1>Gicela Vargas</h1>
@@ -548,7 +584,7 @@
 <footer>
     <div class="container">
         <p>&copy; 2026 Gicela Vargas. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Bridging engineering expertise with data and technology to solve real-world challenges"</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Bridging engineering expertise with data and technology to solve real-world challenges</p>
     </div>
 </footer>
 
