@@ -16,7 +16,7 @@ The portfolio is designed to clearly communicate **end-to-end project experience
 
 ## Featured Projects
 
-The portfolio showcases six main technical projects:
+The portfolio showcases five main technical projects:
 
 ---
 
@@ -93,20 +93,6 @@ This project demonstrates **structured analytical thinking**, **model lifecycle 
   - Revenue/expense tracking across 1,138+ transactions
   - Donor and vendor intelligence
   - Operational transparency metrics
-
----
-
-### 6. Portfolio Website
-**Responsive personal portfolio built with HTML, CSS, and JavaScript**
-
-- **Repository**: https://github.com/EnithV/portfolio-website  
-- **Live Site**: https://enithv.github.io/portfolio-website/  
-- **Technologies**: HTML5, CSS3, JavaScript, CSS Grid, Flexbox  
-- **Features**:
-  - Modern responsive design
-  - Interactive elements and smooth scrolling
-  - Project showcase with live demos
-  - Mobile-first approach
 
 ---
 
