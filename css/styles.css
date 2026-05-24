@@ -253,8 +253,10 @@ body {
   line-height: 1.8;
   color: #334155;
   margin: 0;
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 @media (max-width: 576px) {
@@ -264,7 +266,6 @@ body {
 
   .about-cv-text {
     font-size: 1rem;
-    text-align: left;
   }
 }
 
