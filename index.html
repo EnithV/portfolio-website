@@ -1,608 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gicela Vargas - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: color 0.3s;
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover;
-            opacity: 0.1;
-            z-index: 0;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .language-selector {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 2;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .language-selector a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            transition: background-color 0.3s;
-        }
-        
-        .language-selector a:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            color: white;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            margin-bottom: 1rem;
-            background-color: #fff;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--light-color);
-        }
-        
-        .quote {
-            font-style: italic;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        section {
-            padding: 3rem 0;
-        }
-        
-        section:nth-child(even) {
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 0.5rem;
-            font-size: 2rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary-color);
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-        
-        .skill {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            transition: transform 0.3s;
-        }
-        
-        .skill:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .skill h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .project-description {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            flex: 1;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-tag {
-            background-color: var(--light-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: var(--dark-color);
-        }
-        
-        .project-challenge {
-            background-color: #f8f9fa;
-            padding: 8px 10px;
-            border-radius: 8px;
-            margin: 12px 0;
-            font-size: 0.8rem;
-            border-left: 3px solid var(--accent-color);
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .project-links a {
-            font-size: 0.9rem;
-        }
-        
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 280px;
-        }
-        
-        .contact-info ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-        
-        .contact-info li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .contact-info i {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            width: 30px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: var(--secondary-color);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-links a i {
-            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
-        }
-        
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        .hashtags {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        
-        .hashtag {
-            background-color: var(--light-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--dark-color);
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .language-selector {
-                top: 10px;
-                right: 10px;
-            }
-            .language-selector a {
-                padding: 3px 8px;
-                font-size: 0.7rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gicela Vargas — Full-Stack Java Developer, Civil Engineer. Portfolio with Spring Boot, REST APIs, data & AI projects.">
+  <title>Gicela Vargas | Full-Stack Java Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <div class="language-selector">
-        <a href="index.html" style="background-color: rgba(255,255,255,0.4);">🇺🇸 EN</a>
-        <a href="index-es.html">🇪🇸 ES</a>
-    </div>
-    <div class="container header-content">
-        <img src="fotogt.JPG" alt="Gicela Vargas" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
-        <h1>Gicela Vargas</h1>
-        <p class="tagline">Full‑Stack Java Developer | Civil Engineer | Data & AI</p>
-        <p class="quote">"Try Just One More Time"</p>
-    </div>
-</header>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<main>
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top" aria-label="Main navigation">
     <div class="container">
-        <!-- About Me -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-text">
-                <p>Civil Engineer transitioning to software development, currently training as a <strong>Full-Stack Java Developer</strong>. I have experience in backend and frontend development, including building <strong>REST APIs with Java and Spring Boot</strong>, as well as developing interfaces with <strong>JavaScript, HTML, and CSS</strong>.</p>
-                
-                <p>I have participated in technology projects such as evaluating and optimizing LLMs, strengthening skills in logic, data validation, and complex problem-solving.</p>
-                
-                <p>I bring analytical thinking, the ability to structure solutions, and adaptability in tech environments.</p>
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Java Full-Stack</h3>
-                    <p>Java, Spring Boot, REST APIs, SQL, HTML, CSS, JavaScript, Git, GitHub</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-brain"></i>
-                    <h3>Data & AI</h3>
-                    <p>Python, Pandas, Power BI, Looker Studio, LLMs, Bias Detection</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Engineering</h3>
-                    <p>Infrastructure Auditing, Compliance, Environmental Impact Assessment</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Methodologies</h3>
-                    <p>Analytical Thinking, Problem Solving, Decision Making</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-language"></i>
-                    <h3>Languages</h3>
-                    <p>Spanish (Native), English (Fluent)</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="section-title">Experience & Education</h2>
-            <div class="about-text">
-                <p><strong>Full-Stack Java Developer</strong><br>
-                Currently training at Generation Colombia, building end-to-end applications with Java, Spring Boot, SQL, and frontend.</p>
-        
-                <p><strong>Civil Engineer & Environmental Specialist</strong><br>
-                Experience in infrastructure projects, including technical, administrative, and financial compliance auditing.</p>
-        
-                <p><strong>Data & AI Training</strong><br>
-                Hands-on experience in data analysis, machine learning, and AI systems (IBM SkillsBuild, Guayerd).</p>
-            </div>
-        </section>
-        
-        <!-- Featured Projects -->
-        <section id="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- 1. Construction Compliance Analyzer -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction Compliance" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">Construction Compliance Analyzer</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Plotly</span>
-                        </div>
-                        <p class="project-description">ML-based compliance risk prediction with interactive dashboards. Aligned with Colombian regulations (NSR-10, Resolution 2115).</p>
-                        <div class="project-challenge">
-                            <strong>⚠️ Challenge:</strong> Integrate Colombian construction regulations into a predictive ML model<br>
-                            <strong>✅ Solution:</strong> Designed a rule-based + ML hybrid approach aligned with NSR-10 and Resolution 2115
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EnithV/construction-compliance-analyzer" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Aurelion Data System -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Aurelion Project" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">Aurelion – End-to-End Data System</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Statistical Analysis</span>
-                        </div>
-                        <p class="project-description">End-to-end data pipeline (EDA → modeling → insights). Regression, classification, clustering, and automated documentation.</p>
-                        <div class="project-challenge">
-                            <strong>⚠️ Challenge:</strong> Organize a full data pipeline across multiple analytical stages<br>
-                            <strong>✅ Solution:</strong> Built a modular system separating EDA, modeling, and statistical analysis
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EnithV/PROYECTO-AURELION" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Potenciar Solidario -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Financial Dashboard" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">Potenciar Solidario – NGO Financial Dashboard</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Looker Studio</span>
-                            <span class="tech-tag">Data Visualization</span>
-                            <span class="tech-tag">Financial Analytics</span>
-                        </div>
-                        <p class="project-description">Comprehensive financial analysis dashboard for a Latin American NGO. Revenue/expense tracking, donor insights, and operational transparency across 1,138+ transactions.</p>
-                        <div class="project-challenge">
-                            <strong>⚠️ Challenge:</strong> Transform raw financial data into actionable insights for NGOs<br>
-                            <strong>✅ Solution:</strong> Designed interactive dashboards in Looker Studio for KPI tracking and decision-making
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EnithV/potenciar-solidario-financial-analysis" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://lookerstudio.google.com/s/iESBg8dQb4w" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. LLM LATAM Pipeline -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="LLM Pipeline" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">LLM LATAM Content Pipeline</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Bias Detection</span>
-                        </div>
-                        <p class="project-description">Structured content generation and validation for ethical LLM training. Bilingual datasets (EN/ES) with quality assurance workflows.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/EnithV/llm-latam-content-pipeline" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://github.com/EnithV/llm-latam-content-pipeline/blob/main/sample_output.json" target="_blank"><i class="fas fa-external-link-alt"></i> Sample Output</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Water Quality Monitor -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Water Quality" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">Water Quality Monitoring Dashboard</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Plotly</span>
-                        </div>
-                        <p class="project-description">Real-time monitoring system for water treatment processes. Automated alerts, compliance tracking, and engineering-based visualizations.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/EnithV/water-quality-monitor" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://enithv-water-quality-monitor-app-mqmqsd.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Private Collaboration -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Systems Automation" class="project-img">
-                    <div class="project-info">
-                        <h3 class="project-title">AI Systems & Automation</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Modular Architecture</span>
-                            <span class="tech-tag">Workflow Design</span>
-                        </div>
-                        <p class="project-description">Structured automation systems for real-world workflows. Modular architecture, task pipelines, and AI workflow integration.</p>
-                        <div class="project-links">
-                            <span style="color: #777; font-size: 0.8rem;">🔒 Private collaboration</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p>Interested in collaborating or have questions? Feel free to reach out!</p>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:egicelav@gmail.com">Email</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Remote, Global</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://github.com/EnithV" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/gicelavargas/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="hashtags">
-                        <span class="hashtag">#FullStackJava</span>
-                        <span class="hashtag">#SpringBoot</span>
-                        <span class="hashtag">#Java</span>
-                        <span class="hashtag">#APIREST</span>
-                        <span class="hashtag">#CivilEngineer</span>
-                        <span class="hashtag">#DataAI</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <a class="navbar-brand" href="#">Gicela <span class="text-info">Vargas</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" href="#about" data-section="about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-section="experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
+          <li class="nav-item ms-lg-2 d-flex gap-2">
+            <a href="index.html" class="lang-pill active" aria-current="page">EN</a>
+            <a href="index-es.html" class="lang-pill">ES</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</main>
+  </nav>
 
-<footer>
+  <header class="hero-section" id="home">
+    <div class="container hero-content">
+      <div class="row align-items-center g-5 py-5">
+        <div class="col-lg-4 text-center text-lg-start">
+          <div class="hero-avatar-wrap mb-4 mb-lg-0 mx-auto mx-lg-0">
+            <img src="Foto_Port.png" alt="Enith Gicela Vargas" class="hero-avatar" width="168" height="168">
+          </div>
+        </div>
+        <div class="col-lg-8 text-center text-lg-start">
+          <span class="badge hero-badge mb-3">Generation Colombia · Full-Stack Java</span>
+          <h1 class="hero-title display-4 mb-3">Gicela Vargas</h1>
+          <p class="hero-subtitle mb-2">Full-Stack Java Developer · Data &amp; AI · Civil Engineering</p>
+          <p class="hero-quote mb-4">"Try Just One More Time"</p>
+          <p class="opacity-75 mb-4 col-lg-10 hero-intro">
+            Full-Stack Java Developer and Civil Engineering professional. Bogotá, Colombia.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a href="#projects" class="btn btn-hero-primary btn-lg">
+              <i class="fa-solid fa-folder-open me-2" aria-hidden="true"></i>View projects
+            </a>
+            <a href="#contact" class="btn btn-hero-outline btn-lg">
+              <i class="fa-solid fa-envelope me-2" aria-hidden="true"></i>Contact me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="about" class="section-block">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-line"></div>
+          <h2 class="section-heading display-6">About Me</h2>
+        </div>
+        <div class="about-cv-box">
+          <p class="about-cv-text">
+            Full-Stack Java Developer and Civil Engineering professional. I have knowledge in backend and frontend
+            development, including building REST APIs with Java and Spring Boot, as well as developing interfaces with
+            JavaScript, HTML, and CSS. I have participated in technology projects, such as evaluating and optimizing
+            large language models (LLMs), strengthening skills in logic, data validation, and complex problem-solving.
+            I bring analytical thinking, the ability to structure solutions, and adaptability in technology environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section-block alt-bg">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-line"></div>
+          <h2 class="section-heading display-6">Technical Skills</h2>
+          <p class="section-subheading">Core stack for full-stack roles, plus data &amp; engineering expertise</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card featured">
+              <div class="skill-icon java"><i class="fa-brands fa-java" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">Java Full-Stack</h3>
+              <p class="text-secondary mb-0 small">Java, Spring Boot, REST APIs, JPA, SQL, PostgreSQL, JWT, HTML, CSS, JavaScript, Bootstrap, Git, GitHub</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card">
+              <div class="skill-icon data"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">Data &amp; Analytics</h3>
+              <p class="text-secondary mb-0 small">Python, Pandas, Power BI, Looker Studio, statistical analysis</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card">
+              <div class="skill-icon ai"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">AI &amp; Machine Learning</h3>
+              <p class="text-secondary mb-0 small">Scikit-learn, NLP, LLM pipelines, bias detection, AI evaluation</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card">
+              <div class="skill-icon eng"><i class="fa-solid fa-hard-hat" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">Engineering</h3>
+              <p class="text-secondary mb-0 small">Infrastructure auditing, compliance, environmental assessment</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card">
+              <div class="skill-icon soft"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">Methodologies</h3>
+              <p class="text-secondary mb-0 small">Analytical thinking, problem solving, structured design, teamwork</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card">
+              <div class="skill-icon lang"><i class="fa-solid fa-language" aria-hidden="true"></i></div>
+              <h3 class="h5 fw-bold">Languages</h3>
+              <p class="text-secondary mb-0 small">Spanish (native), English (B2)</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section-block">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-line"></div>
+          <h2 class="section-heading display-6">Experience &amp; Education</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <p class="meta">Feb 2026 — Jun 2026</p>
+            <h3>Full-Stack Java Development — Generation Colombia</h3>
+            <p class="text-secondary mb-0">Intensive program in Java, Spring Boot, SQL, and frontend technologies for end-to-end web applications.</p>
+          </article>
+          <article class="timeline-item">
+            <p class="meta">May 2024 — Mar 2026 · Freelance</p>
+            <h3>LLM Trainer</h3>
+            <p class="text-secondary mb-0">Improved LLM response quality through prompt and dataset design; structured evaluation criteria; debugging and bias-aware training practices.</p>
+          </article>
+          <article class="timeline-item">
+            <p class="meta">Feb 2015 — Mar 2026 · Freelance</p>
+            <h3>Civil Engineer</h3>
+            <p class="text-secondary mb-0">Managed infrastructure projects with technical, regulatory, and quality compliance; analyzed technical and financial data to support decisions.</p>
+          </article>
+          <article class="timeline-item">
+            <p class="meta">Jul 2025 — Dec 2025</p>
+            <h3>AI &amp; Data Fundamentals — Guayerd / IBM</h3>
+            <p class="text-secondary mb-0">AI fundamentals and data analytics: exploratory analysis, predictive models, and automated documentation (Aurelion project).</p>
+          </article>
+          <article class="timeline-item">
+            <p class="meta">Dec 2014</p>
+            <h3>Civil Engineering — Universidad Pedagógica y Tecnológica de Colombia</h3>
+            <p class="text-secondary mb-0">Professional degree in Civil Engineering (UPTC).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-block alt-bg">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-line"></div>
+          <h2 class="section-heading display-6">Featured Projects</h2>
+          <p class="section-subheading">Full-stack, data, and engineering — with live demos and source code where available</p>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 filter-pills" role="group" aria-label="Filter projects">
+          <input type="radio" class="btn-check" name="projectFilter" id="f-all" value="all" checked>
+          <label class="btn btn-outline-primary" for="f-all">All</label>
+          <input type="radio" class="btn-check" name="projectFilter" id="f-fs" value="fullstack">
+          <label class="btn btn-outline-primary" for="f-fs">Full-Stack</label>
+          <input type="radio" class="btn-check" name="projectFilter" id="f-data" value="data">
+          <label class="btn btn-outline-primary" for="f-data">Data &amp; AI</label>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,fullstack">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-primary project-badge">Full-Stack</span>
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Practice Exercises — Web Catalog</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge primary-tech">Bootstrap 5</span>
+                  <span class="tech-badge primary-tech">JavaScript</span>
+                  <span class="tech-badge">Java</span>
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Vite</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">35 programming exercises with live browser demos, bilingual UI (EN/ES), and sample solutions in Java, JavaScript, and Python.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Offer 35 practice problems with live demos and sample code in three languages.<br>
+                  <strong>Solution:</strong> Bilingual web catalog (EN/ES), in-browser demos, and Java, JavaScript, and Python solutions.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/Excercises_practice" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                  <a href="https://enithv.github.io/Excercises_practice/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play me-1"></i>Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-info text-dark project-badge">Data &amp; AI</span>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Construction Compliance Analyzer</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Streamlit</span>
+                  <span class="tech-badge">Scikit-learn</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">ML-based compliance risk prediction aligned with Colombian regulations (NSR-10, Resolution 2115).</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Integrate construction regulations into a predictive model.<br>
+                  <strong>Solution:</strong> Hybrid rule-based + ML approach for risk scoring.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/construction-compliance-analyzer" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                  <a href="https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-info text-dark project-badge">Data &amp; AI</span>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Aurelion — End-to-End Data System</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Pandas</span>
+                  <span class="tech-badge">Scikit-learn</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">Full data pipeline: EDA, modeling, clustering, and automated documentation across three sprints.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Organize a full data pipeline across multiple analytical stages.<br>
+                  <strong>Solution:</strong> Built a modular system separating EDA, modeling, and statistical analysis.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/PROYECTO-AURELION" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-info text-dark project-badge">Data &amp; AI</span>
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Potenciar Solidario — NGO Dashboard</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Looker Studio</span>
+                  <span class="tech-badge">Financial Analytics</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">Financial transparency dashboard: 1,138+ transactions, donor insights, and KPI tracking.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Transform raw financial data into actionable insights for NGOs.<br>
+                  <strong>Solution:</strong> Interactive Looker Studio dashboards for KPI tracking and decision-making.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/potenciar-solidario-financial-analysis" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                  <a href="https://lookerstudio.google.com/s/iESBg8dQb4w" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-info text-dark project-badge">Data &amp; AI</span>
+                <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">LLM LATAM Content Pipeline</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">NLP</span>
+                  <span class="tech-badge">Bias Detection</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">Ethical LLM training content: bilingual datasets (EN/ES) with QA workflows.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Produce reliable bilingual training content with ethical quality standards.<br>
+                  <strong>Solution:</strong> Structured generation and validation pipeline with bias detection and QA workflows.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/llm-latam-content-pipeline" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                  <a href="https://github.com/EnithV/llm-latam-content-pipeline/blob/main/sample_output.json" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">Sample</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-info text-dark project-badge">Engineering</span>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Water Quality Monitoring</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Streamlit</span>
+                  <span class="tech-badge">Plotly</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">Real-time water treatment monitoring with alerts and compliance tracking.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Monitor water quality parameters in real time with clear compliance signals.<br>
+                  <strong>Solution:</strong> Streamlit dashboard with automated alerts, trend charts, and engineering-based thresholds.
+                </div>
+                <div class="project-links d-flex gap-2 mt-auto">
+                  <a href="https://github.com/EnithV/water-quality-monitor" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                  <a href="https://enithv-water-quality-monitor-app-mqmqsd.streamlit.app/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-tags="all,data">
+            <article class="project-card">
+              <div class="card-img-wrap">
+                <span class="badge bg-secondary project-badge">Private</span>
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">AI Systems &amp; Automation</h3>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">Workflow Design</span>
+                </div>
+                <p class="text-secondary small flex-grow-1">Modular automation systems for real-world workflows and AI integration.</p>
+                <div class="challenge-box">
+                  <strong>Challenge:</strong> Automate complex real-world processes without losing maintainability.<br>
+                  <strong>Solution:</strong> Modular architecture with reusable components, task pipelines, and integrated AI workflows.
+                </div>
+                <p class="text-muted small mt-auto mb-0"><i class="fa-solid fa-lock me-1"></i> Private collaboration</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-block contact-section">
+      <div class="container text-center">
+        <div class="section-line"></div>
+        <h2 class="section-heading display-6">Contact</h2>
+        <p class="section-subheading mx-auto">Open to full-stack Java opportunities, collaborations, and remote roles</p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">
+            <a href="mailto:ingegvargas@gmail.com" class="text-white text-decoration-none fs-5" aria-label="Send email">
+              <i class="fa-solid fa-envelope me-2" aria-hidden="true"></i>Email
+            </a>
+          </li>
+          <li class="text-white-50"><i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>Bogotá, Colombia</li>
+        </ul>
+        <div class="d-flex justify-content-center gap-3 mb-4">
+          <a href="https://github.com/EnithV" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gicelavargas/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <span class="hashtag-pill">#FullStackJava</span>
+          <span class="hashtag-pill">#SpringBoot</span>
+          <span class="hashtag-pill">#RESTAPI</span>
+          <span class="hashtag-pill">#Bootstrap</span>
+          <span class="hashtag-pill">#CivilEngineer</span>
+          <span class="hashtag-pill">#DataAI</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer text-center">
     <div class="container">
-        <p>&copy; 2026 Gicela Vargas. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Bridging engineering expertise with Full‑Stack Java development, data, and technology to solve real-world challenges</p>
+      <p class="mb-1">&copy; 2026 Gicela Vargas. All rights reserved.</p>
+      <p class="mb-0 small">Bridging engineering expertise with full-stack Java development, data, and technology</p>
     </div>
-</footer>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

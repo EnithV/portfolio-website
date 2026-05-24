@@ -1,154 +1,66 @@
-# Portfolio Website
+# portfolio-website
 
-**Live Site**: https://enithv.github.io/portfolio-website/
+**Repository:** [github.com/EnithV/portfolio-website](https://github.com/EnithV/portfolio-website)  
+**Live site:** https://enithv.github.io/portfolio-website/
 
-Professional portfolio website showcasing engineering, data, and system-oriented projects. Built with modern web technologies and responsive design.
-
----
-
-## About
-
-This is the personal portfolio website of **Gicela Vargas**, Civil Engineer and Data & AI Specialist, focused on building **data-driven systems, automation, and real-world engineering solutions**.
-
-The portfolio is designed to clearly communicate **end-to-end project experience**, combining real-world engineering knowledge with modern data science, machine learning, and structured system design.
+Modern portfolio built with **Bootstrap 5**, focused on **Full-Stack Java Developer** roles. Bilingual: English (`index.html`) and Spanish (`index-es.html`).
 
 ---
 
-## Featured Projects
+## Features
 
-The portfolio showcases **six** main technical projects:
-
----
-
-### 1. AI Systems & Automation (Private Collaboration)
-
-**Structured automation systems for real-world workflows**
-
-- 🧠 Modular architecture  
-- ⚙️ Workflow logic  
-- 🔄 Task pipelines  
-- 🤖 AI workflows  
-
-> 🔒 Private collaboration — cannot be publicly shared
+- Sticky navigation with smooth scroll and active section highlight
+- Full-screen hero with profile photo and CTAs
+- Skill cards (Java Full-Stack featured)
+- Experience timeline
+- Project grid with filter (All · Full-Stack · Data & AI)
+- Challenge / Solution blocks per project
+- Contact section (Email link, no phone shown)
+- Responsive, accessible layout (skip link, focus states, semantic HTML)
+- Typography: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
 
 ---
 
-### 2. Construction Compliance Analyzer
+## Structure
 
-**Machine learning system for automated construction project compliance analysis and risk prediction**
-
-- **Repository**: https://github.com/EnithV/construction-compliance-analyzer  
-- **Live Demo**: https://enithv-construction-compliance-analy-compliance-analyzer-y1p8wg.streamlit.app/  
-- **Technologies**: Python, Streamlit, Scikit-learn, Plotly  
-- **Features**:
-  - ML-based compliance risk prediction
-  - Interactive dashboards
-  - Compliance scoring aligned with Colombian regulations
-  - Decision support based on real-world engineering logic
-
----
-
-### 3. Aurelion Project – End-to-End Data & AI System
-
-**Comprehensive data analysis and machine learning system for structured decision-making**
-
-- **Repository**: https://github.com/EnithV/PROYECTO-AURELION  
-- **Technologies**: Python, Pandas, NumPy, Scikit-learn, Matplotlib, Statistical Analysis  
-- **Scope**:
-  - End-to-end data pipeline (EDA, normalization, feature engineering)
-  - Machine learning models (regression, classification, clustering)
-  - Inferential and prescriptive statistics
-  - Automated generation of analytical documentation
-  - Modular architecture organized across 3 development sprints
-- **Key Highlights**:
-  - Unified interactive CLI program to access all modules
-  - Reproducible results and auto-generated reports
-  - Clear separation between data analysis, ML modeling, and theory
-
-This project demonstrates **structured analytical thinking**, **model lifecycle understanding**, and **production-oriented organization** beyond exploratory notebooks.
+```
+portfolio-website/
+├── index.html          # English
+├── index-es.html       # Spanish
+├── css/styles.css      # Custom theme on top of Bootstrap
+├── js/main.js          # Scroll, nav, project filters
+├── Foto_Port.png       # Profile photo (hero)
+├── .nojekyll           # GitHub Pages (skip Jekyll)
+└── README.md
+```
 
 ---
 
-### 4. LLM LATAM Content Pipeline
+## Local preview
 
-**Structured pipeline for content generation and validation in ethical LLM training**
+Open `index.html` in the browser, or use any static server:
 
-- **Repository**: https://github.com/EnithV/llm-latam-content-pipeline  
-- **Sample Output**: https://github.com/EnithV/llm-latam-content-pipeline/blob/main/sample_output.json  
-- **Technologies**: Python, NLP, Pandas, Bias Detection  
-- **Features**:
-  - Ethical AI training content
-  - Bilingual (Spanish / English) datasets
-  - Quality assurance and bias mitigation focus
-  - Structured dataset generation and validation workflows
+```bash
+cd portfolio-website
+npx serve .
+```
 
 ---
 
-### 5. Water Quality Monitoring Dashboard
+## GitHub Pages
 
-**Real-time monitoring system for water treatment processes**
-
-- **Repository**: https://github.com/EnithV/water-quality-monitor  
-- **Live Demo**: https://enithv-water-quality-monitor-app-mqmqsd.streamlit.app/  
-- **Technologies**: Python, Streamlit, Plotly, Data Analysis  
-- **Features**:
-  - Real-time water quality metrics
-  - Automated alert system
-  - Compliance tracking dashboards
-  - Visualization based on engineering workflows
+1. Push this folder to [EnithV/portfolio-website](https://github.com/EnithV/portfolio-website).
+2. **Settings → Pages →** branch `main`, folder `/ (root)`.
+3. Site URL: https://enithv.github.io/portfolio-website/
 
 ---
 
-### 6. Potenciar Solidario – NGO Financial Dashboard
+## Related project
 
-**Interactive dashboard for financial transparency and decision-making**
-
-- **Repository**: https://github.com/EnithV/potenciar-solidario-financial-analysis  
-- **Live Demo**: https://lookerstudio.google.com/s/iESBg8dQb4w  
-- **Technologies**: Looker Studio, Data Visualization, Financial Analytics  
-- **Features**:
-  - Complete financial analysis for a Latin American NGO
-  - Revenue/expense tracking across 1,138+ transactions
-  - Donor and vendor intelligence
-  - Operational transparency metrics
+- [Excercises_practice](https://github.com/EnithV/Excercises_practice) — 35 programming exercises (web demos + Java sources)
 
 ---
 
-## Technologies Used
+## Author
 
-- **Frontend**: HTML5, CSS3, JavaScript  
-- **Styling**: CSS Grid, Flexbox, CSS Variables  
-- **Icons**: Font Awesome 6.5.0  
-- **Deployment**: GitHub Pages  
-- **Responsive Design**: Mobile-first approach  
-
----
-
-## Key Features
-
-- **Professional Design**: Clean, modern interface with gradient backgrounds  
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices  
-- **Interactive Elements**: Smooth scrolling, hover effects, animated cards  
-- **Project Showcase**: Dedicated section with live demos and source code links  
-- **Contact Integration**: Social media links and professional contact information  
-- **Performance Optimized**: Lightweight, fast-loading pages  
-
----
-
-## Technical Highlights
-
-### CSS Features
-- CSS Variables for consistent theming  
-- Flexbox and Grid for modern layouts  
-- Smooth transitions and hover effects  
-- Mobile-responsive breakpoints  
-- Professional color scheme  
-
-### JavaScript Functionality
-- Smooth scrolling navigation  
-- Interactive element animations  
-- Cross-browser compatibility  
-
----
-
-## File Structure
+**Gicela Vargas** — Full-Stack Java Developer · Civil Engineer · Data & AI
