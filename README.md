@@ -47,6 +47,16 @@ npx serve .
 
 ---
 
+## Project card thumbnails
+
+When adding or updating a project in `index.html` / `index-es.html`:
+
+1. Prefer **Pexels** direct URLs (`images.pexels.com/.../pexels-photo-....jpeg?auto=compress&cs=tinysrgb&w=600`) — same pattern as Weather App. Unsplash links often return **404** or fail on GitHub Pages (blank white image).
+2. **Verify** the URL returns `HTTP 200` before committing (e.g. `curl -I <url>`).
+3. Use the **same** `src` in EN and ES; only change `alt` text per language.
+
+---
+
 ## GitHub Pages
 
 1. Push this folder to [EnithV/portfolio-website](https://github.com/EnithV/portfolio-website).
