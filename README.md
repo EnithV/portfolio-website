@@ -13,7 +13,7 @@ Modern portfolio built with **Bootstrap 5**, focused on **Full-Stack Java Develo
 - Full-screen hero with profile photo and CTAs
 - Skill cards (Java Full-Stack featured)
 - Experience timeline
-- Project grid with filter (All · Full-Stack · Data & AI)
+- Project grid with filter (All · Full-Stack · Data & AI), including NASA APOD, Weather App, and practice exercises
 - Challenge / Solution blocks per project
 - Contact section (Email link, no phone shown)
 - Responsive, accessible layout (skip link, focus states, semantic HTML)
@@ -55,9 +55,13 @@ npx serve .
 
 ---
 
-## Related project
+## Related projects
 
-- [Excercises_practice](https://github.com/EnithV/Excercises_practice) — 35 programming exercises (web demos + Java sources)
+| Project | Repository | Live demo |
+|---------|------------|-----------|
+| **NASA APOD** | [NASA_APOD](https://github.com/EnithV/NASA_APOD) | [enithv.github.io/NASA_APOD](https://enithv.github.io/NASA_APOD/) |
+| **Weather App** | [Weather_App](https://github.com/EnithV/Weather_App) | [enithv.github.io/Weather_App](https://enithv.github.io/Weather_App/) |
+| **Practice exercises** | [Excercises_practice](https://github.com/EnithV/Excercises_practice) | [enithv.github.io/Excercises_practice](https://enithv.github.io/Excercises_practice/) |
 
 ---
 
