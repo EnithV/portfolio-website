@@ -421,6 +421,12 @@ body {
   overflow: hidden;
 }
 
+.project-card .card-img-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .project-card .card-img-wrap img {
   width: 100%;
   height: 100%;
