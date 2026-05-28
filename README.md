@@ -70,7 +70,7 @@ When adding or updating a project in `index.html` / `index-es.html`:
 | Project | Repository | Live demo |
 |---------|------------|-----------|
 | **NASA APOD** | [NASA_APOD](https://github.com/EnithV/NASA_APOD) | [enithv.github.io/NASA_APOD](https://enithv.github.io/NASA_APOD/) |
-| **Weather App** | [WeatherApp](https://github.com/EnithV/WeatherApp) | [enithv.github.io/WeatherApp](https://enithv.github.io/WeatherApp/) |
+| **Weather App** | [WeatherApp](https://github.com/EnithV/WeatherApp) | [weatherapp-6yp3.onrender.com](https://weatherapp-6yp3.onrender.com/) |
 | **Practice exercises** | [Excercises_practice](https://github.com/EnithV/Excercises_practice) | [enithv.github.io/Excercises_practice](https://enithv.github.io/Excercises_practice/) |
 
 ---
