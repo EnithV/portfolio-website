@@ -33,6 +33,7 @@ portfolio-website/
 ├── img/logo-icon.png   # GV logo, true transparency (from LogoT.png)
 ├── img/favicon.png     # 32×32 favicon
 ├── scripts/process-logo.mjs  # Regenerate icons if LogoT.png changes
+├── CV-EGicela_Vargas.pdf  # Downloadable CV (About section)
 ├── Foto_Port.png       # Profile photo (hero)
 ├── .nojekyll           # GitHub Pages (skip Jekyll)
 └── README.md
