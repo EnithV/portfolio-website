@@ -48,13 +48,13 @@
     });
   });
 
-  /* Close mobile menu on link click */
+  /* Close mobile menu on nav click */
   const navCollapse = document.getElementById("navbarNav");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (navCollapse?.classList.contains("show")) {
-        bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
-      }
-    });
-  });
+  const closeMobileNav = () => {
+    if (navCollapse?.classList.contains("show")) {
+      bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+    }
+  };
+  navLinks.forEach((link) => link.addEventListener("click", closeMobileNav));
+  document.querySelector(".brand-lockup")?.addEventListener("click", closeMobileNav);
 })();

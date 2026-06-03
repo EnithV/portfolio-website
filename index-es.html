@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gicela Vargas — Desarrolladora Full-Stack Java, Ingeniera Civil. Portafolio con Spring Boot, APIs REST, proyectos de datos e IA.">
+  <meta name="description" content="Gicela Vargas — Desarrolladora Full-Stack Java. Spring Boot, APIs REST, proyectos de datos e IA con demos. Bogotá, abierta a remoto.">
   <title>Gicela Vargas | Desarrolladora Full-Stack Java</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus_Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +19,10 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top" aria-label="Navegación principal">
     <div class="container">
-      <a class="navbar-brand" href="#">Gicela <span class="text-info">Vargas</span></a>
+      <a class="navbar-brand brand-lockup" href="#home" aria-label="Gicela Vargas — inicio">
+        <img src="img/logo-icon.png" alt="" width="36" height="36" class="brand-mark" aria-hidden="true">
+        <span class="brand-text">Gicela <span class="brand-accent">Vargas</span></span>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +32,7 @@
           <li class="nav-item"><a class="nav-link active" href="#about" data-section="about">Sobre mí</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Habilidades</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience" data-section="experience">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-section="experience">Trayectoria</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contacto</a></li>
           <li class="nav-item ms-lg-2 d-flex gap-2">
             <a href="index.html" class="lang-pill">EN</a>
@@ -41,19 +45,19 @@
 
   <header class="hero-section" id="home">
     <div class="container hero-content">
-      <div class="row align-items-center g-5 py-5">
-        <div class="col-lg-4 text-center text-lg-start">
-          <div class="hero-avatar-wrap mb-4 mb-lg-0 mx-auto mx-lg-0">
-            <img src="Foto_Port.png" alt="Enith Gicela Vargas" class="hero-avatar" width="168" height="168">
+      <div class="row align-items-center justify-content-center g-4 g-lg-5 py-5 hero-row">
+        <div class="col-12 col-md-6 col-lg-5 hero-col-photo text-center">
+          <div class="hero-avatar-wrap">
+            <img src="Foto_Port.png" alt="Enith Gicela Vargas" class="hero-avatar" width="252" height="252">
           </div>
         </div>
-        <div class="col-lg-8 text-center text-lg-start">
+        <div class="col-12 col-md-6 col-lg-7 text-center text-lg-start">
           <span class="badge hero-badge mb-3">Generation Colombia · Full-Stack Java</span>
           <h1 class="hero-title display-4 mb-3">Gicela Vargas</h1>
           <p class="hero-subtitle mb-2">Desarrolladora Full-Stack Java · Datos e IA · Ingeniería Civil</p>
           <p class="hero-quote mb-4">"Try Just One More Time"</p>
           <p class="opacity-75 mb-4 col-lg-10 hero-intro">
-            Desarrolladora Full-Stack Java y profesional en Ingeniería Civil. Bogotá, Colombia.
+            Desarrolladora Full-Stack Java — APIs REST, Spring Boot, datos e IA. Bogotá · abierta a remoto.
           </p>
           <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
             <a href="#projects" class="btn btn-hero-primary btn-lg">
@@ -70,7 +74,7 @@
 
   <main id="main">
 
-    <section id="about" class="section-block">
+    <section id="about" class="section-block section-bg-white">
       <div class="container">
         <div class="text-center mb-5">
           <div class="section-line"></div>
@@ -78,18 +82,24 @@
         </div>
         <div class="about-cv-box">
           <p class="about-cv-text">
-            Desarrolladora Full-Stack Java y profesional en Ingeniería Civil. Cuento con conocimientos en desarrollo
-            backend y frontend, incluyendo la construcción de APIs REST con Java y Spring Boot, así como el desarrollo
-            de interfaces con JavaScript, HTML y CSS. He participado en proyectos tecnológicos, como la evaluación y
-            optimización de modelos de lenguaje (LLMs), fortaleciendo habilidades en lógica, validación de datos y
-            resolución de problemas complejos. Aporto pensamiento analítico, capacidad para estructurar soluciones y
-            adaptabilidad en entornos tecnológicos.
+            Desarrollo aplicaciones web full-stack con <strong>Java y Spring Boot</strong>, con base en ingeniería civil
+            y experiencia en <strong>datos, IA y evaluación de LLMs</strong>. Me enfoco en APIs REST claras,
+            interfaces usables y solución estructurada de problemas.
+          </p>
+          <p class="about-cv-text mb-0">
+            Abierta a <strong>roles full-stack Java</strong> (remoto o híbrido). Explora mis proyectos abajo — hitos
+            de trayectoria e historial completo en LinkedIn.
+          </p>
+          <p class="about-linkedin mt-3 mb-0">
+            <a href="https://www.linkedin.com/in/gicelavargas/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin me-1" aria-hidden="true"></i>Ver perfil completo en LinkedIn
+            </a>
           </p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section-block alt-bg">
+    <section id="skills" class="section-block section-bg-tint">
       <div class="container">
         <div class="text-center">
           <div class="section-line"></div>
@@ -143,7 +153,7 @@
       </div>
     </section>
 
-    <section id="projects" class="section-block">
+    <section id="projects" class="section-block section-bg-surface">
       <div class="container">
         <div class="text-center">
           <div class="section-line"></div>
@@ -176,13 +186,11 @@
                   <span class="tech-badge primary-tech">Bootstrap 5</span>
                   <span class="tech-badge primary-tech">JavaScript</span>
                   <span class="tech-badge">Java</span>
-                  <span class="tech-badge">Python</span>
-                  <span class="tech-badge">Vite</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">35 ejercicios con interfaz oscura tipo glass, demos en el navegador, catálogo bilingüe (ES/EN) y soluciones en Java, JavaScript y Python.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Catálogo bilingüe de 35 ejercicios con demos en vivo en Java, JavaScript y Python.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Ofrecer 35 problemas de práctica con demos en vivo y código en tres lenguajes.<br>
-                  <strong>Solución:</strong> Catálogo web bilingüe con UI glassmorphism, demos en el navegador y soluciones en Java, JavaScript y Python.
+                  <strong>Desafío:</strong> 35 problemas en tres lenguajes, un solo lugar.<br>
+                  <strong>Solución:</strong> Catálogo glass con demos en el navegador y código de ejemplo.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/Excercises_practice" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -206,10 +214,10 @@
                   <span class="tech-badge primary-tech">Bootstrap 5</span>
                   <span class="tech-badge">API Open-Meteo</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Consulta de clima en web y terminal: geocodifica cualquier ciudad y muestra temperatura, humedad, viento y precipitación con Open-Meteo (sin clave API).</p>
+                <p class="text-secondary small project-desc flex-grow-1">Clima por ciudad en web y terminal con Open-Meteo — sin clave API.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Ofrecer el mismo flujo de clima en la web y en terminal con errores claros y unidades dinámicas.<br>
-                  <strong>Solución:</strong> Lógica compartida con Open-Meteo en módulos Node.js e interfaz Bootstrap para búsquedas en vivo en el navegador.
+                  <strong>Desafío:</strong> Mismo flujo de clima en web y terminal.<br>
+                  <strong>Solución:</strong> Módulos Node compartidos + UI Bootstrap en vivo.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/WeatherApp" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -231,12 +239,11 @@
                   <span class="tech-badge primary-tech">JavaScript</span>
                   <span class="tech-badge primary-tech">Bootstrap 5</span>
                   <span class="tech-badge">API NASA APOD</span>
-                  <span class="tech-badge">localStorage</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Explora la Imagen Astronómica del Día de la NASA por fecha: imágenes o videos, enlace HD, navegación anterior/siguiente, favoritos e interfaz bilingüe (ES/EN).</p>
+                <p class="text-secondary small project-desc flex-grow-1">Explorador NASA APOD con favoritos e interfaz bilingüe — sin backend.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Crear un explorador APOD atractivo con validación de fechas, distintos tipos de medio y favoritos persistentes sin backend.<br>
-                  <strong>Solución:</strong> JavaScript vanilla + API abierta de la NASA, UI glassmorphism, favoritos en localStorage e i18n completo ES/EN con toasts de Bootstrap.
+                  <strong>Desafío:</strong> APOD por fecha con favoritos offline.<br>
+                  <strong>Solución:</strong> API NASA + localStorage + i18n ES/EN.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/NASA_APOD" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -259,12 +266,11 @@
                   <span class="tech-badge primary-tech">API REST</span>
                   <span class="tech-badge">Bootstrap</span>
                   <span class="tech-badge">Java 17</span>
-                  <span class="tech-badge">Python</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Puntuación de riesgo (NSR-10, Res. 2115). Panel Java full-stack + API Spring Boot; versión Python con ML.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Riesgo de cumplimiento en construcción — API Spring Boot + ML en Python.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Integrar normativas de construcción en un modelo predictivo.<br>
-                  <strong>Solución:</strong> Enfoque híbrido reglas + ML (Python) y API REST Spring Boot con UI Bootstrap (Java).
+                  <strong>Desafío:</strong> Normativas en una herramienta predictiva.<br>
+                  <strong>Solución:</strong> Híbrido reglas + ML con API REST y panel.
                 </div>
                 <div class="project-links d-flex flex-wrap gap-2 mt-auto">
                   <a href="https://github.com/EnithV/construction-compliance-java" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Java</a>
@@ -288,10 +294,10 @@
                   <span class="tech-badge">Pandas</span>
                   <span class="tech-badge">Scikit-learn</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Pipeline completo: EDA, modelado, clustering y documentación automatizada en tres sprints.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Pipeline end-to-end: EDA, modelado, clustering y documentación automatizada.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Organizar un pipeline completo de datos a través de múltiples etapas analíticas.<br>
-                  <strong>Solución:</strong> Sistema modular separando EDA, modelado y análisis estadístico.
+                  <strong>Desafío:</strong> Analítica en varias etapas, un sistema.<br>
+                  <strong>Solución:</strong> Pipeline modular en Python por sprint.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/PROYECTO-AURELION" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -312,10 +318,10 @@
                   <span class="tech-badge">Looker Studio</span>
                   <span class="tech-badge">Analítica Financiera</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Transparencia financiera: más de 1.138 transacciones, insights de donantes y KPIs.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Dashboard financiero ONG — más de 1.138 transacciones y KPIs de donantes.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Transformar datos financieros crudos en insights accionables para ONGs.<br>
-                  <strong>Solución:</strong> Dashboards interactivos en Looker Studio para seguimiento de KPIs y toma de decisiones.
+                  <strong>Desafío:</strong> Finanzas crudas → insights para ONG.<br>
+                  <strong>Solución:</strong> Dashboards KPI en Looker Studio.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/potenciar-solidario-financial-analysis" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -338,10 +344,10 @@
                   <span class="tech-badge">NLP</span>
                   <span class="tech-badge">Detección de Sesgos</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Contenido para entrenamiento ético de LLMs: datasets bilingües (EN/ES) con flujos de calidad.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Datasets bilingües para LLMs con QA y detección de sesgos.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Generar contenido bilingüe confiable con estándares éticos de calidad.<br>
-                  <strong>Solución:</strong> Pipeline estructurado de generación y validación con detección de sesgos y flujos de QA.
+                  <strong>Desafío:</strong> Datos bilingües éticos para entrenamiento.<br>
+                  <strong>Solución:</strong> Pipeline de generación y validación con QA.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/llm-latam-content-pipeline" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -364,10 +370,10 @@
                   <span class="tech-badge">Streamlit</span>
                   <span class="tech-badge">Plotly</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Monitoreo en tiempo real de plantas de tratamiento con alertas y cumplimiento normativo.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Dashboard Streamlit para alertas de tratamiento de agua y cumplimiento.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Monitorear parámetros de calidad del agua en tiempo real con señales claras de cumplimiento.<br>
-                  <strong>Solución:</strong> Dashboard en Streamlit con alertas automáticas, gráficos de tendencia y umbrales de ingeniería.
+                  <strong>Desafío:</strong> Calidad y cumplimiento en tiempo real.<br>
+                  <strong>Solución:</strong> Streamlit con alertas y umbrales de ingeniería.
                 </div>
                 <div class="project-links d-flex gap-2 mt-auto">
                   <a href="https://github.com/EnithV/water-quality-monitor" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Código</a>
@@ -389,10 +395,10 @@
                   <span class="tech-badge">Python</span>
                   <span class="tech-badge">Diseño de Flujos</span>
                 </div>
-                <p class="text-secondary small flex-grow-1">Sistemas modulares de automatización para flujos reales e integración con IA.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Automatización modular de flujos con componentes de IA integrados.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Automatizar procesos reales complejos sin perder mantenibilidad.<br>
-                  <strong>Solución:</strong> Arquitectura modular con componentes reutilizables, pipelines de tareas e integración con IA.
+                  <strong>Desafío:</strong> Automatización compleja y mantenible.<br>
+                  <strong>Solución:</strong> Pipelines y módulos reutilizables.
                 </div>
                 <p class="text-muted small mt-auto mb-0"><i class="fa-solid fa-lock me-1"></i> Colaboración privada</p>
               </div>
@@ -403,38 +409,38 @@
       </div>
     </section>
 
-    <section id="experience" class="section-block alt-bg">
+    <section id="experience" class="section-block section-bg-muted">
       <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-4">
           <div class="section-line"></div>
-          <h2 class="section-heading display-6">Experiencia y Educación</h2>
+          <h2 class="section-heading display-6">Trayectoria</h2>
         </div>
-        <div class="timeline">
+        <p class="trajectory-intro">Solo contexto breve — los proyectos de arriba muestran lo que construyo. Línea de tiempo completa en LinkedIn.</p>
+        <div class="timeline timeline-compact">
           <article class="timeline-item">
             <p class="meta">Feb 2026 — Jun 2026</p>
-            <h3>Desarrollo Full-Stack Java — Generation Colombia</h3>
-            <p class="text-secondary mb-0">Programa intensivo en Java, Spring Boot, SQL y tecnologías frontend para aplicaciones web end-to-end.</p>
+            <h3>Generation Colombia · Full-Stack Java</h3>
+            <p class="text-secondary mb-0">Bootcamp intensivo: Java, Spring Boot, SQL y frontend para apps end-to-end.</p>
           </article>
           <article class="timeline-item">
             <p class="meta">May 2024 — Mar 2026 · Freelance</p>
             <h3>LLM Trainer</h3>
-            <p class="text-secondary mb-0">Mejoré la calidad de respuestas en LLMs mediante diseño de prompts y datasets; criterios de evaluación estructurados; debugging y prácticas responsables de IA.</p>
-          </article>
-          <article class="timeline-item">
-            <p class="meta">Feb 2015 — Mar 2026 · Freelance</p>
-            <h3>Ingeniera Civil</h3>
-            <p class="text-secondary mb-0">Gestión de proyectos de infraestructura con cumplimiento técnico, normativo y de calidad; análisis de información técnica y financiera.</p>
+            <p class="text-secondary mb-0">Diseño de prompts y datasets, evaluación estructurada y calidad responsable en modelos de lenguaje.</p>
           </article>
           <article class="timeline-item">
             <p class="meta">Jul 2025 — Dic 2025</p>
-            <h3>Fundamentos de IA y Análisis de Datos — Guayerd / IBM</h3>
-            <p class="text-secondary mb-0">Fundamentos de inteligencia artificial y analítica de datos: modelos predictivos y documentación automatizada (proyecto Aurelion).</p>
+            <h3>Guayerd / IBM · IA y Datos</h3>
+            <p class="text-secondary mb-0">Analítica predictiva y pipelines de datos — ver <a href="#projects">Aurelion</a> en proyectos.</p>
           </article>
-          <article class="timeline-item">
-            <p class="meta">Dic 2014</p>
-            <h3>Ingeniería Civil — Universidad Pedagógica y Tecnológica de Colombia</h3>
-            <p class="text-secondary mb-0">Título profesional en Ingeniería Civil (UPTC).</p>
-          </article>
+        </div>
+        <p class="trajectory-edu">
+          <strong>Formación:</strong> Generation Colombia (Full-Stack Java, 2026) · Guayerd/IBM (IA y Datos, 2025) ·
+          Ingeniería Civil, UPTC (2014) · La práctica en ingeniería aporta enfoque analítico y de cumplimiento normativo.
+        </p>
+        <div class="trajectory-link">
+          <a href="https://www.linkedin.com/in/gicelavargas/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin me-2" aria-hidden="true"></i>Trayectoria completa en LinkedIn
+          </a>
         </div>
       </div>
     </section>
@@ -471,6 +477,10 @@
 
   <footer class="site-footer text-center">
     <div class="container">
+      <p class="footer-lockup">
+        <img src="img/logo-icon.png" alt="" width="22" height="22" class="brand-mark" aria-hidden="true">
+        <span>Gicela Vargas</span>
+      </p>
       <p class="mb-1">&copy; 2026 Gicela Vargas. Todos los derechos reservados.</p>
       <p class="mb-0 small">Uniendo ingeniería con desarrollo full-stack Java, datos y tecnología</p>
     </div>

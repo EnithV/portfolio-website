@@ -12,7 +12,8 @@ Modern portfolio built with **Bootstrap 5**, focused on **Full-Stack Java Develo
 - Sticky navigation with smooth scroll and active section highlight
 - Full-screen hero with profile photo and CTAs
 - Skill cards (Java Full-Stack featured)
-- Experience timeline
+- Career highlights with LinkedIn link (no duplicate CV)
+- GV logo with transparent background
 - Project grid with filter (All · Full-Stack · Data & AI), including NASA APOD, Weather App, and practice exercises
 - Challenge / Solution blocks per project
 - Contact section (Email link, no phone shown)
@@ -29,6 +30,9 @@ portfolio-website/
 ├── index-es.html       # Spanish
 ├── css/styles.css      # Custom theme on top of Bootstrap
 ├── js/main.js          # Scroll, nav, project filters
+├── img/logo-icon.png   # GV logo, true transparency (from LogoT.png)
+├── img/favicon.png     # 32×32 favicon
+├── scripts/process-logo.mjs  # Regenerate icons if LogoT.png changes
 ├── Foto_Port.png       # Profile photo (hero)
 ├── .nojekyll           # GitHub Pages (skip Jekyll)
 └── README.md
