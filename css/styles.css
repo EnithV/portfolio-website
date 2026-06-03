@@ -350,76 +350,59 @@ section[id] {
 }
 
 .about-cv-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 1rem;
   margin-top: 1.75rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--fs-border);
 }
 
-.about-action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  min-height: 2.75rem;
-  padding: 0.6rem 1.35rem;
-  font-size: 0.9rem;
+.about-cv-actions .btn {
   font-weight: 600;
-  line-height: 1.2;
-  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.35rem;
   border-radius: 0.5rem;
-  white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about-action-btn i {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.about-action-btn:hover {
   text-decoration: none;
-  transform: translateY(-2px);
+  white-space: nowrap;
 }
 
-.about-action-linkedin {
+.about-cv-actions .btn-about-linkedin {
   color: #0a66c2;
-  background: #fff;
-  border: 2px solid rgba(10, 102, 194, 0.35);
-  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.08);
+  background-color: #fff;
+  border: 2px solid rgba(10, 102, 194, 0.4);
 }
 
-.about-action-linkedin:hover {
+.about-cv-actions .btn-about-linkedin:hover,
+.about-cv-actions .btn-about-linkedin:focus {
   color: #fff;
-  background: #0a66c2;
+  background-color: #0a66c2;
   border-color: #0a66c2;
-  box-shadow: 0 6px 16px rgba(10, 102, 194, 0.25);
+  text-decoration: none;
 }
 
-.about-action-cv {
+.about-cv-actions .btn-about-cv {
   color: #fff;
   background: linear-gradient(135deg, var(--fs-accent) 0%, #1d4ed8 100%);
   border: 2px solid transparent;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
 }
 
-.about-action-cv:hover {
+.about-cv-actions .btn-about-cv:hover,
+.about-cv-actions .btn-about-cv:focus {
+  color: #fff;
   background: linear-gradient(135deg, var(--fs-accent-hover) 0%, #1e40af 100%);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  border-color: transparent;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.38);
 }
 
 @media (max-width: 576px) {
   .about-cv-actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch !important;
   }
 
-  .about-action-btn {
+  .about-cv-actions .btn {
     width: 100%;
+    justify-content: center;
     white-space: normal;
   }
 }
