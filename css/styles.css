@@ -324,74 +324,80 @@ section[id] {
   margin: 0 auto 3rem;
 }
 
-/* About Me — summary paragraph typography */
-.about-cv-box {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 2rem 2.25rem;
-  background: var(--fs-surface);
-  border: 1px solid var(--fs-border);
-  border-radius: var(--fs-radius);
-  box-shadow: var(--fs-shadow);
+/* About Me — full-width within section */
+.about-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .about-cv-text {
   font-family: var(--fs-font);
   font-size: 1.0625rem;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #334155;
   margin: 0 0 1.25rem;
   text-align: left;
-}
-
-.about-cv-text:last-of-type {
-  margin-bottom: 0;
+  max-width: 72rem;
 }
 
 .about-cv-actions {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--fs-border);
+  max-width: 72rem;
 }
 
-.about-cv-actions .btn {
-  font-weight: 600;
-  font-size: 0.9rem;
+.about-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
   padding: 0.65rem 1.35rem;
-  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
   text-decoration: none;
+  border-radius: 0.5rem;
   white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.about-cv-actions .btn-about-linkedin {
+.about-action-btn i {
+  font-size: 1.1rem;
+}
+
+.about-action-linkedin {
   color: #0a66c2;
   background-color: #fff;
-  border: 2px solid rgba(10, 102, 194, 0.4);
+  border: 2px solid rgba(10, 102, 194, 0.45);
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
 }
 
-.about-cv-actions .btn-about-linkedin:hover,
-.about-cv-actions .btn-about-linkedin:focus {
+.about-action-linkedin:hover,
+.about-action-linkedin:focus-visible {
   color: #fff;
   background-color: #0a66c2;
   border-color: #0a66c2;
   text-decoration: none;
 }
 
-.about-cv-actions .btn-about-cv {
+.about-action-cv {
   color: #fff;
   background: linear-gradient(135deg, var(--fs-accent) 0%, #1d4ed8 100%);
-  border: 2px solid transparent;
+  border: 2px solid var(--fs-accent);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
 }
 
-.about-cv-actions .btn-about-cv:hover,
-.about-cv-actions .btn-about-cv:focus {
+.about-action-cv:hover,
+.about-action-cv:focus-visible {
   color: #fff;
   background: linear-gradient(135deg, var(--fs-accent-hover) 0%, #1e40af 100%);
-  border-color: transparent;
+  border-color: var(--fs-accent-hover);
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.38);
 }
 
 @media (max-width: 576px) {
@@ -400,7 +406,7 @@ section[id] {
     align-items: stretch !important;
   }
 
-  .about-cv-actions .btn {
+  .about-action-btn {
     width: 100%;
     justify-content: center;
     white-space: normal;
@@ -435,10 +441,6 @@ section[id] {
 }
 
 @media (max-width: 576px) {
-  .about-cv-box {
-    padding: 1.25rem 1.35rem;
-  }
-
   .about-cv-text {
     font-size: 1rem;
   }
