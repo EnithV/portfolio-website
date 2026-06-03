@@ -352,40 +352,76 @@ section[id] {
 .about-cv-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.25rem;
-  margin-top: 1.25rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--fs-border);
 }
 
-.about-cv-actions a {
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.about-cv-actions .about-link-item {
-  color: var(--fs-accent);
-}
-
-.about-cv-actions .about-link-item:hover {
-  color: var(--fs-accent-hover);
-  text-decoration: underline;
-}
-
-.about-cv-actions .btn-download-cv {
+.about-action-btn {
   display: inline-flex;
   align-items: center;
-  padding: 0.45rem 1rem;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.35rem;
   font-size: 0.9rem;
-  color: var(--fs-accent);
-  border: 2px solid var(--fs-accent);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
   border-radius: 0.5rem;
-  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.about-cv-actions .btn-download-cv:hover {
-  background: var(--fs-accent);
-  color: #fff;
+.about-action-btn i {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.about-action-btn:hover {
   text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.about-action-linkedin {
+  color: #0a66c2;
+  background: #fff;
+  border: 2px solid rgba(10, 102, 194, 0.35);
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.08);
+}
+
+.about-action-linkedin:hover {
+  color: #fff;
+  background: #0a66c2;
+  border-color: #0a66c2;
+  box-shadow: 0 6px 16px rgba(10, 102, 194, 0.25);
+}
+
+.about-action-cv {
+  color: #fff;
+  background: linear-gradient(135deg, var(--fs-accent) 0%, #1d4ed8 100%);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.about-action-cv:hover {
+  background: linear-gradient(135deg, var(--fs-accent-hover) 0%, #1e40af 100%);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 576px) {
+  .about-cv-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-action-btn {
+    width: 100%;
+    white-space: normal;
+  }
 }
 
 .trajectory-intro {
