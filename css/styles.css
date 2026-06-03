@@ -324,11 +324,11 @@ section[id] {
   margin: 0 auto 3rem;
 }
 
-/* About Me — full-width within section */
+/* About Me — centered block, justified copy (aligned with trajectory/contact) */
 .about-content {
   width: 100%;
-  max-width: none;
-  margin: 0;
+  max-width: 42rem;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -339,15 +339,14 @@ section[id] {
   line-height: 1.8;
   color: #334155;
   margin: 0 0 1.25rem;
-  text-align: left;
-  max-width: 72rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-cv-actions {
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--fs-border);
-  max-width: 72rem;
+  justify-content: center;
 }
 
 .about-action-btn {
@@ -403,11 +402,10 @@ section[id] {
 @media (max-width: 576px) {
   .about-cv-actions {
     flex-direction: column;
-    align-items: stretch !important;
+    align-items: center;
   }
 
   .about-action-btn {
-    width: 100%;
     justify-content: center;
     white-space: normal;
   }
