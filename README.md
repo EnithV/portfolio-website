@@ -75,9 +75,12 @@ When adding or updating a project in `index.html` / `index-es.html`:
 
 | Project | Repository | Live demo |
 |---------|------------|-----------|
+| **Style Factory** (capstone) | [stylefactory](https://github.com/EnithV/stylefactory) · [stylefactory-backend](https://github.com/EnithV/stylefactory-backend) | [enithv.github.io/stylefactory](https://enithv.github.io/stylefactory/) |
 | **NASA APOD** | [NASA_APOD](https://github.com/EnithV/NASA_APOD) | [enithv.github.io/NASA_APOD](https://enithv.github.io/NASA_APOD/) |
 | **Weather App** | [WeatherApp](https://github.com/EnithV/WeatherApp) | [weatherapp-6yp3.onrender.com](https://weatherapp-6yp3.onrender.com/) |
 | **Practice exercises** | [Excercises_practice](https://github.com/EnithV/Excercises_practice) | [enithv.github.io/Excercises_practice](https://enithv.github.io/Excercises_practice/) |
+
+**Style Factory stack:** Java 17, Spring Boot, Spring Security, JWT, JPA, PostgreSQL (Supabase), JavaScript, Bootstrap 5.
 
 ---
 
