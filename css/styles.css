@@ -13,7 +13,7 @@
   --fs-radius: 0.875rem;
   --fs-shadow: 0 4px 24px rgba(12, 25, 41, 0.08);
   --fs-shadow-lg: 0 12px 40px rgba(12, 25, 41, 0.12);
-  --fs-font: "Plus Jakarta Sans", system-ui, sans-serif;
+  --fs-font: "Plus Jakarta Sans", sans-serif;
 }
 
 html {
@@ -336,6 +336,7 @@ section[id] {
   font-family: var(--fs-font);
   font-size: 1.0625rem;
   font-weight: 400;
+  font-synthesis: none;
   line-height: 1.8;
   color: #334155;
   margin: 0 0 1.25rem;
@@ -441,6 +442,8 @@ section[id] {
 @media (max-width: 576px) {
   .about-cv-text {
     font-size: 1rem;
+    text-align: left;
+    hyphens: none;
   }
 }
 
