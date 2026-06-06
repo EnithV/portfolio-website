@@ -80,7 +80,8 @@ When adding or updating a project in `index.html` / `index-es.html`:
 | **Weather App** | [WeatherApp](https://github.com/EnithV/WeatherApp) | [weatherapp-6yp3.onrender.com](https://weatherapp-6yp3.onrender.com/) |
 | **Practice exercises** | [Excercises_practice](https://github.com/EnithV/Excercises_practice) | [enithv.github.io/Excercises_practice](https://enithv.github.io/Excercises_practice/) |
 
-**Style Factory stack:** Java 17, Spring Boot, Spring Security, JWT, JPA, PostgreSQL (Supabase), JavaScript, Bootstrap 5.
+**Style Factory stack:** Java 17, Spring Boot, Spring Security, JWT, JPA, PostgreSQL (Supabase), JavaScript, Bootstrap 5.  
+**Swagger:** https://stylefactoryapi.onrender.com/swagger-ui/index.html
 
 ---
 
