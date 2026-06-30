@@ -34,7 +34,7 @@ portfolio-website/
 ├── img/favicon.png     # 32×32 favicon
 ├── scripts/process-logo.mjs  # Regenerate icons if LogoT.png changes
 ├── CV-EGicela_Vargas_Es.pdf   # CV (Spanish, index-es.html)
-├── CV_EGicela_Vargas_En.pdf   # CV (English, index.html)
+├── CV-EGicela_Vargas_En.pdf   # CV (English, index.html)
 ├── Foto_Port.png       # Profile photo (hero)
 ├── .nojekyll           # GitHub Pages (skip Jekyll)
 └── README.md
