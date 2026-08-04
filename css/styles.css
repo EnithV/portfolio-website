@@ -648,6 +648,17 @@ section[id] {
   letter-spacing: 0.05em;
 }
 
+.project-badge-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .project-card .card-body {
   padding: 1.5rem;
   flex: 1;
