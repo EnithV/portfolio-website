@@ -15,8 +15,8 @@
     :root {
       --ink: #0c1929;
       --paper: #f4efe8;
-      --gold: #c4a77d;
-      --wood: #6e4424;
+      --gold: #7dd3fc;
+      --wood: #7c3aed;
       --navy: #132337;
     }
     * { box-sizing: border-box; }
@@ -24,9 +24,9 @@
     body {
       font-family: "Plus Jakarta Sans", system-ui, sans-serif;
       background:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(196, 167, 125, 0.28), transparent 50%),
-        radial-gradient(ellipse 70% 40% at 100% 100%, rgba(37, 99, 235, 0.18), transparent 45%),
-        #0c1929;
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124, 58, 237, 0.35), transparent 50%),
+        radial-gradient(ellipse 70% 40% at 100% 100%, rgba(56, 189, 248, 0.22), transparent 45%),
+        #05060a;
       color: var(--paper);
       display: grid;
       place-items: center;
@@ -37,8 +37,8 @@
     .card {
       position: relative;
       border-radius: 28px;
-      background: linear-gradient(165deg, #1a2838 0%, #0c1929 55%, #16110e 100%);
-      border: 1px solid rgba(196, 167, 125, 0.35);
+      background: linear-gradient(165deg, #0a0c12 0%, #05060a 60%, #0b0614 100%);
+      border: 1px solid rgba(125, 211, 252, 0.28);
       box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.45),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -61,24 +61,18 @@
     }
     .top {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
+      text-align: center;
+      gap: 6px;
+      margin: 8px 0 18px;
     }
-    .photo {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--gold);
-      background: #243044;
-    }
-    .photo-fallback {
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--gold);
+    .logo {
+      display: block;
+      width: min(280px, 86%);
+      height: auto;
+      margin: 0 auto 4px;
+      filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.25));
     }
     h1 {
       margin: 0 0 4px;
@@ -96,6 +90,7 @@
       color: #d9d0c6;
       font-size: 0.92rem;
       line-height: 1.45;
+      text-align: center;
     }
     .projects { display: grid; gap: 10px; }
     .project {
@@ -105,13 +100,13 @@
       border-radius: 16px;
       padding: 14px 16px;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(196, 167, 125, 0.22);
+      border: 1px solid rgba(125, 211, 252, 0.22);
       transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
     .project:hover, .project:focus-visible {
       transform: translateY(-2px);
-      background: rgba(196, 167, 125, 0.12);
-      border-color: var(--gold);
+      background: rgba(56, 189, 248, 0.1);
+      border-color: #38bdf8;
       outline: none;
     }
     .project strong {
@@ -145,13 +140,13 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      color: var(--gold);
+      color: #7dd3fc;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(196, 167, 125, 0.25);
+      border: 1px solid rgba(125, 211, 252, 0.25);
       text-decoration: none;
       font-size: 0.95rem;
     }
-    .icon:hover { background: rgba(196, 167, 125, 0.18); color: #fff; }
+    .icon:hover { background: rgba(124, 58, 237, 0.35); color: #fff; }
     .share {
       margin-top: 16px;
       width: 100%;
@@ -161,10 +156,10 @@
       font: inherit;
       font-weight: 700;
       cursor: pointer;
-      background: var(--wood);
-      color: #fff8f0;
+      background: linear-gradient(90deg, #7c3aed, #38bdf8);
+      color: #fff;
     }
-    .share:hover { background: #4f2f18; }
+    .share:hover { filter: brightness(1.08); }
     .lang {
       position: absolute;
       top: 16px;
@@ -183,7 +178,7 @@
       cursor: pointer;
       padding: 4px 8px;
     }
-    .lang button.active { color: var(--gold); }
+    .lang button.active { color: #7dd3fc; }
     .toast {
       position: fixed;
       bottom: 20px;
@@ -214,11 +209,9 @@
         <button type="button" data-lang="en">EN</button>
       </div>
       <div class="top">
-        <img class="photo" src="Foto_Port.png" alt="Gicela Vargas" width="76" height="76" id="photo">
-        <div>
-          <h1>Gicela Vargas</h1>
-          <p class="role" data-i18n="role">Desarrollo web a medida</p>
-        </div>
+        <img class="logo" src="img/gv-logo.png" alt="GV — Gicela Vargas">
+        <h1>Gicela Vargas</h1>
+        <p class="role" data-i18n="role">Desarrollo web a medida</p>
       </div>
       <p class="pitch" data-i18n="pitch">Apps con Java y Spring Boot: reservas, tiendas en línea y APIs documentadas. Toca un proyecto para verlo en vivo.</p>
       <div class="projects">
@@ -291,16 +284,7 @@
         card.style.transform = "rotateY(0) rotateX(0)";
       });
     }
-    var photo = document.getElementById("photo");
-    if (photo) {
-      photo.addEventListener("error", function () {
-        var fallback = document.createElement("div");
-        fallback.className = "photo photo-fallback";
-        fallback.textContent = "GV";
-        fallback.setAttribute("aria-hidden", "true");
-        photo.replaceWith(fallback);
-      });
-    }
+    var toast = document.getElementById("toast");
     document.getElementById("share").addEventListener("click", async function () {
       var url = location.href.split("#")[0];
       try {
