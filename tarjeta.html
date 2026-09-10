@@ -81,10 +81,12 @@
       object-position: center 38%;
       filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.28));
     }
-    h1 {
-      margin: 0 0 4px;
-      font-size: 1.45rem;
-      letter-spacing: -0.03em;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
     }
     .role {
       margin: 0;
@@ -208,10 +210,10 @@
         <button type="button" data-lang="en">EN</button>
       </div>
       <div class="top">
+        <h1 class="sr-only">Gicela Vargas</h1>
         <div class="logo-wrap">
-          <img class="logo" src="img/gv-logo.png" alt="GV — Gicela Vargas">
+          <img class="logo" src="img/gv-logo.png" alt="GV">
         </div>
-        <h1>Gicela Vargas</h1>
         <p class="role" data-i18n="role">Desarrollo web a medida</p>
       </div>
       <p class="pitch" data-i18n="pitch">Apps con Java y Spring Boot: reservas, tiendas en línea y APIs documentadas. Toca un proyecto para verlo en vivo.</p>
