@@ -234,20 +234,19 @@
                 </a>
               </div>
               <div class="card-body">
-                <h3 class="card-title">NordicStore — Microservices E-Commerce</h3>
+                <h3 class="card-title">NordicStore — E-Commerce (API + Live Demo)</h3>
                 <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge primary-tech">Java 17</span>
                   <span class="tech-badge primary-tech">Spring Boot</span>
-                  <span class="tech-badge primary-tech">Spring Cloud</span>
-                  <span class="tech-badge primary-tech">Angular</span>
-                  <span class="tech-badge">Keycloak</span>
-                  <span class="tech-badge">Docker</span>
-                  <span class="tech-badge">MongoDB</span>
+                  <span class="tech-badge primary-tech">JavaScript</span>
                   <span class="tech-badge">PostgreSQL</span>
+                  <span class="tech-badge">JWT</span>
+                  <span class="tech-badge">Swagger</span>
                 </div>
-                <p class="text-secondary small project-desc flex-grow-1">Public shop demo (catalog, cart, orders, PayPal/Wompi demo, shopping assistant) plus a Spring Boot API with the same domain services (customer, product, cart, order, payment, notification, assistant). A separate microservices lab (Gateway, Eureka, Keycloak, Angular) lives alongside for the full distributed stack.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Live shop: catalog, cart, orders, demo payments (card / PayPal / Wompi), and a shopping assistant. Java 17 + Spring Boot REST API (JWT, JPA, PostgreSQL) with domain services for customer, product, cart, order, payment, notification, and assistant — documented in Swagger.</p>
                 <div class="challenge-box">
-                  <strong>Challenge:</strong> Let visitors walk the whole purchase flow in the browser without 13 containers, without dropping the real domain services.<br>
-                  <strong>Solution:</strong> Static GitHub Pages store + one JWT API (Style Factory pattern); catalog fallback if Render is waking up. Docker/Keycloak stack kept as the architecture lab.
+                  <strong>Challenge:</strong> Let a recruiter complete a purchase flow in the browser, with a real API — not only a static mock.<br>
+                  <strong>Solution:</strong> GitHub Pages store + one JWT API on Render. Catalog still loads if Render is waking up. A separate local lab explores Gateway, Eureka, and Keycloak; that stack is not the public deploy.
                 </div>
                 <div class="project-links d-flex flex-wrap gap-2 mt-auto">
                   <a href="https://github.com/EnithV/NordicStore" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Frontend</a>

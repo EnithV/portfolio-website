@@ -234,20 +234,19 @@
                 </a>
               </div>
               <div class="card-body">
-                <h3 class="card-title">NordicStore — E-Commerce con Microservicios</h3>
+                <h3 class="card-title">NordicStore — E-Commerce (API + Demo en vivo)</h3>
                 <div class="d-flex flex-wrap gap-1 mb-2">
+                  <span class="tech-badge primary-tech">Java 17</span>
                   <span class="tech-badge primary-tech">Spring Boot</span>
-                  <span class="tech-badge primary-tech">Spring Cloud</span>
-                  <span class="tech-badge primary-tech">Angular</span>
-                  <span class="tech-badge">Keycloak</span>
-                  <span class="tech-badge">Docker</span>
-                  <span class="tech-badge">MongoDB</span>
+                  <span class="tech-badge primary-tech">JavaScript</span>
                   <span class="tech-badge">PostgreSQL</span>
+                  <span class="tech-badge">JWT</span>
+                  <span class="tech-badge">Swagger</span>
                 </div>
-                <p class="text-secondary small project-desc flex-grow-1">Demo público de la tienda (catálogo, carrito, pedidos, PayPal/Wompi demo y asistente) más un API Spring Boot con los mismos servicios de dominio (customer, product, cart, order, payment, notification, assistant). El laboratorio de microservicios (Gateway, Eureka, Keycloak, Angular) queda aparte para la arquitectura distribuida.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Tienda en vivo: catálogo, carrito, pedidos, pagos demo (tarjeta / PayPal / Wompi) y asistente de compra. API REST en Java 17 + Spring Boot (JWT, JPA, PostgreSQL) con servicios de dominio para customer, product, cart, order, payment, notification y assistant — documentada en Swagger.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Que un visitante recorra toda la compra en el navegador sin 13 contenedores, sin perder los servicios de dominio.<br>
-                  <strong>Solución:</strong> Tienda estática en GitHub Pages + un API con JWT (mismo patrón que Style Factory); catálogo de respaldo si Render está despertando. El stack Docker/Keycloak se mantiene como laboratorio de arquitectura.
+                  <strong>Desafío:</strong> Que un reclutador recorra la compra en el navegador, con un API real — no solo un mock estático.<br>
+                  <strong>Solución:</strong> Tienda en GitHub Pages + un API con JWT en Render. El catálogo sigue cargando si Render está despertando. Un laboratorio local explora Gateway, Eureka y Keycloak; ese stack no es el deploy público.
                 </div>
                 <div class="project-links d-flex flex-wrap gap-2 mt-auto">
                   <a href="https://github.com/EnithV/NordicStore" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Frontend</a>
