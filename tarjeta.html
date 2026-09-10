@@ -240,6 +240,28 @@
     @media (prefers-reduced-motion: reduce) {
       .card { transition: none; }
     }
+    @page {
+      size: 105mm 172mm;
+      margin: 0;
+    }
+    @media print {
+      html, body {
+        background: #07080d;
+        padding: 0;
+        min-height: auto;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .stage { width: 100%; max-width: none; perspective: none; }
+      .card {
+        transform: none !important;
+        box-shadow: none;
+        border-radius: 0;
+        border: 0;
+        padding-bottom: 28px;
+      }
+      .lang, .share, .toast { display: none !important; }
+    }
   </style>
 </head>
 <body>
