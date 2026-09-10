@@ -3,83 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gicela Vargas · Tarjeta digital</title>
-  <meta name="description" content="Gicela Vargas — desarrollo web a medida. Style Factory y NordicStore.">
-  <meta property="og:title" content="Gicela Vargas · Desarrollo web">
-  <meta property="og:description" content="Reservas, tiendas en línea y APIs. Toca un proyecto para verlo.">
+  <title>GV · Arquitectura Web y Full-Stack</title>
+  <meta name="description" content="Arquitectura web y desarrollo full-stack con Java y Spring Boot. Style Factory y NordicStore en vivo.">
+  <meta property="og:title" content="Arquitectura Web y Desarrollo Full-Stack">
+  <meta property="og:description" content="Aplicaciones web y APIs con Java y Spring Boot. Explora los proyectos en vivo.">
   <meta property="og:url" content="https://enithv.github.io/portfolio-website/tarjeta.html">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:500,600,700,800" rel="stylesheet">
   <style>
-    :root {
-      --ink: #0c1929;
-      --paper: #f4efe8;
-      --gold: #7dd3fc;
-      --wood: #7c3aed;
-      --navy: #132337;
-    }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
     body {
       font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-      background:
-        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124, 58, 237, 0.35), transparent 50%),
-        radial-gradient(ellipse 70% 40% at 100% 100%, rgba(56, 189, 248, 0.22), transparent 45%),
-        #05060a;
-      color: var(--paper);
+      background: #07080d;
+      color: #eef4ff;
       display: grid;
       place-items: center;
       padding: 24px 16px 40px;
       min-height: 100dvh;
     }
-    .stage { perspective: 1200px; width: min(420px, 100%); }
+    .stage { perspective: 1400px; width: min(400px, 100%); }
     .card {
       position: relative;
-      border-radius: 28px;
-      background: linear-gradient(165deg, #0a0c12 0%, #05060a 60%, #0b0614 100%);
-      border: 1px solid rgba(125, 211, 252, 0.28);
-      box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      padding: 28px 24px 22px;
+      border-radius: 36px;
+      padding: 28px 22px 22px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #10141f 0%, #0b0e16 42%, #09090f 100%);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
       transform-style: preserve-3d;
       transition: transform 0.12s ease-out;
-      overflow: hidden;
     }
-    .card::before {
+    .circuit {
+      position: absolute;
+      inset: 0 0 48%;
+      opacity: 0.45;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 20%, transparent 75%);
+    }
+    .circuit::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.07) 48%, transparent 56%);
-      transform: translateX(-60%);
-      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(168, 85, 247, 0.35), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(34, 211, 238, 0.28), transparent 26%);
     }
-    .card:hover::before { animation: shine 1.1s ease; }
-    @keyframes shine {
-      to { transform: translateX(60%); }
-    }
-    .top {
+    .lang {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+    }
+    .lang button {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #94a3b8;
+      font: inherit;
+      font-size: 0.68rem;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 5px 8px;
+    }
+    .lang button:first-child { border-radius: 8px 0 0 8px; }
+    .lang button:last-child { border-radius: 0 8px 8px 0; border-left: 0; }
+    .lang button.active { color: #67e8f9; background: rgba(8, 145, 178, 0.2); }
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      justify-items: center;
       text-align: center;
-      gap: 6px;
-      margin: 8px 0 18px;
+      margin-top: 8px;
     }
-    .logo-wrap {
-      width: min(240px, 82%);
-      height: 132px;
-      margin: 0 auto 2px;
-      overflow: hidden;
+    .logo-badge {
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 50% 40%, #1a1030, #05060a 72%);
+      border: 1px solid rgba(34, 211, 238, 0.55);
+      box-shadow:
+        0 0 0 6px rgba(15, 23, 42, 0.65),
+        0 0 28px rgba(168, 85, 247, 0.45),
+        0 0 40px rgba(34, 211, 238, 0.25);
+      margin-bottom: 18px;
     }
-    .logo {
-      display: block;
-      width: 100%;
-      height: 210px;
+    .logo-badge img {
+      width: 78px;
+      height: 78px;
       object-fit: cover;
       object-position: center 38%;
-      filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.28));
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45));
     }
     .sr-only {
       position: absolute;
@@ -88,105 +111,123 @@
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
     }
-    .role {
-      margin: 0;
-      color: #c8b8a4;
-      font-size: 0.88rem;
-      font-weight: 600;
+    .title {
+      margin: 0 8px 10px;
+      font-size: clamp(1.55rem, 6.2vw, 1.85rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
     }
     .pitch {
-      margin: 0 0 20px;
-      color: #d9d0c6;
+      margin: 0 6px 22px;
+      color: #b8c4d6;
       font-size: 0.92rem;
-      line-height: 1.45;
-      text-align: center;
+      line-height: 1.5;
+      font-weight: 500;
     }
-    .projects { display: grid; gap: 10px; }
+    .projects {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
     .project {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      min-height: 148px;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
       text-decoration: none;
       color: inherit;
-      border-radius: 16px;
-      padding: 14px 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(125, 211, 252, 0.22);
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      backdrop-filter: blur(8px);
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .project.sf {
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: inset 0 0 24px rgba(251, 146, 60, 0.08);
+    }
+    .project.ns {
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: inset 0 0 24px rgba(56, 189, 248, 0.08);
     }
     .project:hover, .project:focus-visible {
-      transform: translateY(-2px);
-      background: rgba(56, 189, 248, 0.1);
-      border-color: #38bdf8;
+      transform: translateY(-3px);
       outline: none;
     }
+    .project svg { width: 22px; height: 22px; margin-bottom: 10px; }
+    .project.sf svg { color: #fbbf24; }
+    .project.ns svg { color: #38bdf8; }
     .project strong {
       display: block;
-      font-size: 1.05rem;
-      color: #fff8f0;
+      font-size: 0.98rem;
+      color: #fff;
+      margin-bottom: 4px;
     }
-    .project span {
-      display: block;
-      margin-top: 3px;
-      font-size: 0.8rem;
-      color: #b8a898;
+    .project em {
+      font-style: normal;
+      font-size: 0.75rem;
+      line-height: 1.35;
+      color: #93a4bb;
+      flex: 1;
     }
+    .go {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .project.sf .go { color: #fcd34d; }
+    .project.ns .go { color: #7dd3fc; }
     .actions {
-      display: flex;
-      justify-content: center;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 14px;
     }
     .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+      height: 52px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      color: #7dd3fc;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(125, 211, 252, 0.25);
       text-decoration: none;
-      font-size: 0.95rem;
+      background: #0c1018;
+      border: 1px solid rgba(56, 189, 248, 0.22);
     }
-    .icon:hover { background: rgba(124, 58, 237, 0.35); color: #fff; }
+    .icon svg { width: 22px; height: 22px; }
+    .icon.mail { color: #22d3ee; }
+    .icon.li { color: #60a5fa; border-color: rgba(96, 165, 250, 0.35); }
+    .icon.gh { color: #e879f9; border-color: rgba(232, 121, 249, 0.35); }
+    .icon:hover { filter: brightness(1.15); }
     .share {
-      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
       width: 100%;
       border: 0;
       border-radius: 999px;
-      padding: 11px 16px;
+      padding: 14px 16px;
       font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      background: linear-gradient(90deg, #7c3aed, #38bdf8);
-      color: #fff;
-    }
-    .share:hover { filter: brightness(1.08); }
-    .lang {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      display: flex;
-      gap: 4px;
-      z-index: 2;
-    }
-    .lang button {
-      background: transparent;
-      border: 0;
-      color: #b8a898;
-      font: inherit;
-      font-size: 0.72rem;
       font-weight: 800;
       cursor: pointer;
-      padding: 4px 8px;
+      color: #fff;
+      background: linear-gradient(90deg, #c026d3, #7c3aed 40%, #22d3ee);
+      box-shadow: 0 10px 28px rgba(124, 58, 237, 0.35);
     }
-    .lang button.active { color: #7dd3fc; }
+    .share:hover { filter: brightness(1.06); }
     .toast {
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%) translateY(12px);
-      background: #fff8f0;
-      color: var(--ink);
+      background: #fff;
+      color: #0c1929;
       padding: 8px 14px;
       border-radius: 999px;
       font-size: 0.85rem;
@@ -198,39 +239,49 @@
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     @media (prefers-reduced-motion: reduce) {
       .card { transition: none; }
-      .card::before { display: none; }
     }
   </style>
 </head>
 <body>
   <div class="stage">
     <article class="card" id="card">
+      <div class="circuit" aria-hidden="true"></div>
       <div class="lang" role="group" aria-label="Idioma">
         <button type="button" class="active" data-lang="es">ES</button>
         <button type="button" data-lang="en">EN</button>
       </div>
-      <div class="top">
-        <h1 class="sr-only">Gicela Vargas</h1>
-        <div class="logo-wrap">
-          <img class="logo" src="img/gv-logo.png" alt="GV">
+      <div class="brand">
+        <h1 class="sr-only">Arquitectura web y desarrollo full-stack</h1>
+        <div class="logo-badge">
+          <img src="img/gv-logo.png" alt="GV">
         </div>
-        <p class="role" data-i18n="role">Desarrollo web a medida</p>
+        <p class="title" data-i18n="title">Arquitectura Web &amp; Desarrollo Full-Stack</p>
+        <p class="pitch" data-i18n="pitch">Creación de aplicaciones web escalables y APIs con Java y Spring Boot. Explora los proyectos en vivo.</p>
       </div>
-      <p class="pitch" data-i18n="pitch">Apps con Java y Spring Boot: reservas, tiendas en línea y APIs documentadas. Toca un proyecto para verlo en vivo.</p>
       <div class="projects">
-        <a class="project" href="https://enithv.github.io/stylefactory/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Style Factory">
+        <a class="project sf" href="https://enithv.github.io/stylefactory/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Style Factory">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
           <strong>Style Factory</strong>
-          <span data-i18n="sf">Reservas y agenda en línea</span>
+          <em data-i18n="sf">Reservas y agenda digital</em>
+          <span class="go" data-i18n="details">Ver demo →</span>
         </a>
-        <a class="project" href="https://enithv.github.io/NordicStore/" target="_blank" rel="noopener noreferrer" aria-label="Abrir NordicStore">
+        <a class="project ns" href="https://enithv.github.io/NordicStore/" target="_blank" rel="noopener noreferrer" aria-label="Abrir NordicStore">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 8H7"/></svg>
           <strong>NordicStore</strong>
-          <span data-i18n="ns">Tienda en línea</span>
+          <em data-i18n="ns">E-commerce minimalista nórdico</em>
+          <span class="go" data-i18n="details">Ver demo →</span>
         </a>
       </div>
       <div class="actions">
-        <a class="icon" href="mailto:ingegvargas@gmail.com" aria-label="Correo">✉</a>
-        <a class="icon" href="https://www.linkedin.com/in/gicelavargas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-        <a class="icon" href="https://enithv.github.io/portfolio-website/" target="_blank" rel="noopener noreferrer" aria-label="Portafolio" data-i18n-title="folio">GV</a>
+        <a class="icon mail" href="mailto:ingegvargas@gmail.com" aria-label="Correo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+        <a class="icon li" href="https://www.linkedin.com/in/gicelavargas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 9H4V20h2.5V9zM5.25 4A1.75 1.75 0 1 0 5.26 7.5 1.75 1.75 0 0 0 5.25 4zM20 20h-2.5v-5.6c0-1.8-.6-3-2.2-3-1.2 0-1.9.8-2.2 1.5V20H10.6s.05-9.7 0-10.7H13v1.5c.5-.8 1.6-2 3.9-2 2.8 0 4.9 1.8 4.9 5.7V20z"/></svg>
+        </a>
+        <a class="icon gh" href="https://github.com/EnithV" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1 .07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.09 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.8c.85 0 1.71.12 2.51.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.64 1.03 2.76 0 3.96-2.34 4.82-4.58 5.08.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+        </a>
       </div>
       <button type="button" class="share" id="share" data-i18n="share">Compartir tarjeta</button>
     </article>
@@ -239,18 +290,20 @@
   <script>
     var copy = {
       es: {
-        role: "Desarrollo web a medida",
-        pitch: "Apps con Java y Spring Boot: reservas, tiendas en línea y APIs documentadas. Toca un proyecto para verlo en vivo.",
-        sf: "Reservas y agenda en línea",
-        ns: "Tienda en línea",
+        title: "Arquitectura Web & Desarrollo Full-Stack",
+        pitch: "Creación de aplicaciones web escalables y APIs con Java y Spring Boot. Explora los proyectos en vivo.",
+        sf: "Reservas y agenda digital",
+        ns: "E-commerce minimalista nórdico",
+        details: "Ver demo →",
         share: "Compartir tarjeta",
         copied: "Enlace de la tarjeta copiado"
       },
       en: {
-        role: "Custom web development",
-        pitch: "Java and Spring Boot apps: bookings, online stores, and documented APIs. Tap a project to open the live demo.",
-        sf: "Online bookings and scheduling",
-        ns: "Online store",
+        title: "Web Architecture & Full-Stack Development",
+        pitch: "Scalable web apps and APIs with Java and Spring Boot. Explore the live projects below.",
+        sf: "Digital bookings and scheduling",
+        ns: "Minimalist Nordic e-commerce",
+        details: "View demo →",
         share: "Share card",
         copied: "Card link copied"
       }
@@ -278,7 +331,7 @@
         var r = card.getBoundingClientRect();
         var x = (ev.clientX - r.left) / r.width - 0.5;
         var y = (ev.clientY - r.top) / r.height - 0.5;
-        card.style.transform = "rotateY(" + (x * 10) + "deg) rotateX(" + (-y * 10) + "deg)";
+        card.style.transform = "rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 8) + "deg)";
       });
       card.addEventListener("pointerleave", function () {
         card.style.transform = "rotateY(0) rotateX(0)";
@@ -287,9 +340,10 @@
     var toast = document.getElementById("toast");
     document.getElementById("share").addEventListener("click", async function () {
       var url = location.href.split("#")[0];
+      var text = copy[lang].title;
       try {
         if (navigator.share) {
-          await navigator.share({ title: "Gicela Vargas", text: copy[lang].pitch, url: url });
+          await navigator.share({ title: text, text: copy[lang].pitch, url: url });
           return;
         }
         await navigator.clipboard.writeText(url);
