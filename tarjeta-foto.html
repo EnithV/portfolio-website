@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GV</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #07080d; min-height: 100%; }
+    body { display: grid; place-items: center; padding: 12px; }
+    .shot {
+      position: relative;
+      width: min(382px, 100%);
+      line-height: 0;
+    }
+    .shot img { width: 100%; height: auto; display: block; border-radius: 28px; }
+    .shot a {
+      position: absolute;
+      display: block;
+      z-index: 1;
+    }
+    .sf { left: 5%; top: 49%; width: 44%; height: 26%; }
+    .ns { left: 51%; top: 49%; width: 44%; height: 26%; }
+    .mail { left: 5%; top: 76.5%; width: 28%; height: 10.5%; }
+    .li { left: 35%; top: 76.5%; width: 29%; height: 10.5%; }
+    .gh { left: 66%; top: 76.5%; width: 29%; height: 10.5%; }
+  </style>
+</head>
+<body>
+  <div class="shot">
+    <img src="img/tarjeta-card.png" alt="Style Factory y NordicStore" width="382" height="628">
+    <a class="sf" href="https://enithv.github.io/stylefactory/" target="_blank" rel="noopener noreferrer" aria-label="Style Factory"></a>
+    <a class="ns" href="https://enithv.github.io/NordicStore/" target="_blank" rel="noopener noreferrer" aria-label="NordicStore"></a>
+    <a class="mail" href="mailto:ingegvargas@gmail.com" aria-label="Correo"></a>
+    <a class="li" href="https://www.linkedin.com/in/gicelavargas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a>
+    <a class="gh" href="https://github.com/EnithV" target="_blank" rel="noopener noreferrer" aria-label="GitHub"></a>
+  </div>
+</body>
+</html>
