@@ -229,10 +229,9 @@
             <article class="project-card">
               <div class="card-img-wrap">
                 <span class="badge bg-primary project-badge">Full-Stack</span>
-                <span class="badge bg-warning text-dark project-badge-status">En progreso</span>
-                <div class="card-img-link" role="img" aria-label="NordicStore plataforma e-commerce con microservicios">
-                  <img src="https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Boutique de moda minimal — NordicStore e-commerce" loading="lazy">
-                </div>
+                <a href="https://enithv.github.io/NordicStore/" target="_blank" rel="noopener noreferrer" class="card-img-link" aria-label="Abrir demo de NordicStore">
+                  <img src="img/nordicstore-banner.png" class="card-img-banner" alt="NordicStore — demo de e-commerce" loading="lazy">
+                </a>
               </div>
               <div class="card-body">
                 <h3 class="card-title">NordicStore — E-Commerce con Microservicios</h3>
@@ -245,14 +244,16 @@
                   <span class="tech-badge">MongoDB</span>
                   <span class="tech-badge">PostgreSQL</span>
                 </div>
-                <p class="text-secondary small project-desc flex-grow-1">Proyecto personal de arquitectura distribuida: Config Server, Eureka, API Gateway y microservicios de dominio (customer, product, cart, order, payment, notification), con Keycloak (OAuth2/OIDC + JWT) y SPA en Angular para el flujo completo de compra.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Demo público de la tienda (catálogo, carrito, pedidos, PayPal/Wompi demo y asistente) más un API Spring Boot con los mismos servicios de dominio (customer, product, cart, order, payment, notification, assistant). El laboratorio de microservicios (Gateway, Eureka, Keycloak, Angular) queda aparte para la arquitectura distribuida.</p>
                 <div class="challenge-box">
-                  <strong>Desafío:</strong> Pasar de un monolito modular a servicios desplegables por separado sin perder seguridad ni una UX clara.<br>
-                  <strong>Solución:</strong> JWT en profundidad (gateway + cada servicio), OpenFeign con propagación de auth, orquestación local con Docker Compose; siguiente: pulir UI y preparar despliegue en la nube.
+                  <strong>Desafío:</strong> Que un visitante recorra toda la compra en el navegador sin 13 contenedores, sin perder los servicios de dominio.<br>
+                  <strong>Solución:</strong> Tienda estática en GitHub Pages + un API con JWT (mismo patrón que Style Factory); catálogo de respaldo si Render está despertando. El stack Docker/Keycloak se mantiene como laboratorio de arquitectura.
                 </div>
                 <div class="project-links d-flex flex-wrap gap-2 mt-auto">
-                  <span class="btn btn-sm btn-outline-secondary disabled" aria-disabled="true"><i class="fa-solid fa-code-branch me-1"></i>Repo pronto</span>
-                  <span class="btn btn-sm btn-outline-secondary disabled" aria-disabled="true"><i class="fa-solid fa-play me-1"></i>Demo solo local</span>
+                  <a href="https://github.com/EnithV/NordicStore" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Frontend</a>
+                  <a href="https://github.com/EnithV/nordicstore-backend" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> API</a>
+                  <a href="https://nordicstore-api.onrender.com/swagger-ui/index.html" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book me-1"></i>Swagger</a>
+                  <a href="https://enithv.github.io/NordicStore/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play me-1"></i>Demo</a>
                 </div>
               </div>
             </article>

@@ -229,10 +229,9 @@
             <article class="project-card">
               <div class="card-img-wrap">
                 <span class="badge bg-primary project-badge">Full-Stack</span>
-                <span class="badge bg-warning text-dark project-badge-status">In progress</span>
-                <div class="card-img-link" role="img" aria-label="NordicStore e-commerce microservices platform">
-                  <img src="https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Minimal fashion boutique interior — NordicStore e-commerce" loading="lazy">
-                </div>
+                <a href="https://enithv.github.io/NordicStore/" target="_blank" rel="noopener noreferrer" class="card-img-link" aria-label="Open NordicStore demo">
+                  <img src="img/nordicstore-banner.png" class="card-img-banner" alt="NordicStore — e-commerce demo" loading="lazy">
+                </a>
               </div>
               <div class="card-body">
                 <h3 class="card-title">NordicStore — Microservices E-Commerce</h3>
@@ -245,14 +244,16 @@
                   <span class="tech-badge">MongoDB</span>
                   <span class="tech-badge">PostgreSQL</span>
                 </div>
-                <p class="text-secondary small project-desc flex-grow-1">Personal platform exploring distributed architecture: Config Server, Eureka, API Gateway, and domain services (customer, product, cart, order, payment, notification), secured with Keycloak (OAuth2/OIDC + JWT) and an Angular SPA for the full purchase flow.</p>
+                <p class="text-secondary small project-desc flex-grow-1">Public shop demo (catalog, cart, orders, PayPal/Wompi demo, shopping assistant) plus a Spring Boot API with the same domain services (customer, product, cart, order, payment, notification, assistant). A separate microservices lab (Gateway, Eureka, Keycloak, Angular) lives alongside for the full distributed stack.</p>
                 <div class="challenge-box">
-                  <strong>Challenge:</strong> Move from a modular monolith to independently deployable services without losing security or a clear UX.<br>
-                  <strong>Solution:</strong> Defense-in-depth JWT (gateway + each service), OpenFeign with auth propagation, Docker Compose for local orchestration; UI polish and cloud deploy next.
+                  <strong>Challenge:</strong> Let visitors walk the whole purchase flow in the browser without 13 containers, without dropping the real domain services.<br>
+                  <strong>Solution:</strong> Static GitHub Pages store + one JWT API (Style Factory pattern); catalog fallback if Render is waking up. Docker/Keycloak stack kept as the architecture lab.
                 </div>
                 <div class="project-links d-flex flex-wrap gap-2 mt-auto">
-                  <span class="btn btn-sm btn-outline-secondary disabled" aria-disabled="true"><i class="fa-solid fa-code-branch me-1"></i>Repo soon</span>
-                  <span class="btn btn-sm btn-outline-secondary disabled" aria-disabled="true"><i class="fa-solid fa-play me-1"></i>Demo local only</span>
+                  <a href="https://github.com/EnithV/NordicStore" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Frontend</a>
+                  <a href="https://github.com/EnithV/nordicstore-backend" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> API</a>
+                  <a href="https://nordicstore-api.onrender.com/swagger-ui/index.html" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book me-1"></i>Swagger</a>
+                  <a href="https://enithv.github.io/NordicStore/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play me-1"></i>Demo</a>
                 </div>
               </div>
             </article>
